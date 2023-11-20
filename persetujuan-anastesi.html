@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Persetujuan Anastesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+<link href="css/jquery.signature.css" rel="stylesheet">
+<style>
+.kbw-signature { width: 200px; height: 100px; }
+</style>
+<!--[if IE]>
+<script src="excanvas.js"></script>
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/jquery.signature.js"></script>
+<script>
+$(function() {
+	var sig = $('#sig').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+<script>
+$(function() {
+	var sig = $('#sig1').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+<script>
+$(function() {
+	var sig = $('#sig2').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+<script>
+$(function() {
+	var sig = $('#sig3').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+  </head>
+  <body>
+    <h3 style="text-align: center;">PERSETUJUAN TINDAKAN ANASTESI</h3>
+    <div class="container">
+        <form action="" autocomplete="off" class="mt-3">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Nomor Rekam Medis</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_01" name="v_01" style="width: 400px;" required autofocus>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Nama Lengkap</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_02" name="v_02" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Nama Keluarga</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_03" name="v_03" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Tanggal Lahir</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="date" id="v_04" name="v_04" style="width: 150px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Jenis Kelamin</label>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_01" value="option1">
+                        <label class="form-check-label" for="t_01">Laki-laki</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_02" value="option2">
+                        <label class="form-check-label" for="t_02">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Ruangan</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_05" name="v_05" style="width: 150px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Tanggal Operasi</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="date" id="v_06" name="v_06" style="width: 150px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Diagnosa</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_07" name="v_07" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">R/Tindakan</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_08" name="v_08" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Dr. Anastesi Yang Menerangkan</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_09" name="v_09" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Dr. Operator</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="v_010" name="v_010" style="width: 400px;" required>
+                </div>
+            </div>
+            <div class="row">
+                <b><p style="text-align: center;">PERSETUJUAN TINDAKAN ANASTESI</p></b>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Nama</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" id="v_011" name="v_011" style="width: 400px;" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Umur</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" id="v_012" name="v_012" style="width: 400px;" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Jenis Kelamin</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_02" value="option1">
+                            <label class="form-check-label" for="t_02">Laki-laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_03" value="option2">
+                            <label class="form-check-label" for="t_03">Perempuan</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Alamat</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" id="v_013" name="v_013" style="width: 400px;" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Tindakan Anastesi Terhadap</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_04" value="option1">
+                            <label class="form-check-label" for="t_04">Saya /</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_05" value="option2">
+                            <label class="form-check-label" for="t_05">Lainnya</label>
+                            <input type="text" id="v_014" name="v_014" style="width: 200px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Nama</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" id="v_015" name="v_015" style="width: 400px;">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Tanggal Lahir</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="date" id="v_016" name="v_016" style="width: 150px;" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="">Nomor Rekam Medis</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" id="v_017" name="v_017" style="width: 400px;" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <b><p style="text-align: center;">PERSETUJUAN TRANSFUSI DARAH</p></b>
+                <div class="row">
+                    <label for="">Kemungkinan prosedur atau tindakan yang dilakukan ini membutuhkan transfusi darah:</label>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_06" name="t_06">
+                            <label class="form-check-label" for="t_06">Sangat tidak mungkin</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_07" name="t_07">
+                            <label class="form-check-label" for="t_07">Mungkin dibutuhkan</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_08" name="t_08">
+                            <label class="form-check-label" for="t_08">Sangat memungkinkan</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <label for="">Saya mengerti bahwa ada kemungkinan resiko yang timbul dari transfusi darah, walaupun jarang dan ini termasuk reaksi transfusi, Hepatitis dan AIDS (Acquired Immune Deficiency Syndrome). Beri tanda pada kotak yang sesuai:</label>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_09" name="t_09">
+                            <label class="form-check-label" for="t_09">Saya menyetujui dan mengizinkan untuk menerima darah atau komponen darah sesuai dengan yang ditentukan/ diputuskan oleh dokter anestesi dan dokter lain yang merawat demi kebaikan saya/ keluarga.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_010" name="t_010">
+                            <label class="form-check-label" for="t_010">Saya menyetujui dan mengizinkan untuk menerima darah atau komponen darah hanya pada kondisi darurat menyelamatkan hidup saya/ keluarga.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="t_011" name="t_011">
+                            <label class="form-check-label" for="t_011">Saya tidak menyetujui pemberian darah atau komponen darah pada kondisi apapun/ sejelek apapun, terhadap diri saya/ keluarga.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <table style="justify-content: center;">
+                    <tr style="height: 200px;">
+                        <td style="text-align: center;">
+                            <label for="" style="text-align: center;">Saksi 1</label>
+                            <br><br><div id="sig"></div>
+                            <br><input type="text" id="v_018" name="v_018" width="100px">
+                        </td>
+                        <td style="text-align: center;">
+                            <label for="" style="text-align: center;">Saksi 2</label>
+                            <br><br><div id="sig1"></div>
+                            <br><input type="text" id="v_019" name="v_019" width="100px">
+                        </td>
+                        <td style="text-align: center;">
+                            <label for="">Dokter Anastesi <br>Yang Menerangkan</label>
+                            <br><div id="sig2"></div>
+                            <br><input type="text" id="v_020" name="v_020" width="100px">
+                        </td>
+                        <td style="text-align: center;">
+                            <label for="">Bengkulu, </label>
+                            <input type="date" id="v_021" name="v_021">
+                            <br><label for="">Jam</label>
+                            <input type="time" id="v_022" name="v_022">
+                            <br><div id="sig3"></div>
+                            <br><input type="text" id="v_023" name="v_023" width="100px">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

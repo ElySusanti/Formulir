@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Pengkajian Awal Keperawatan dan Medis Instalasi  Gawat Darurat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery.signature.css" rel="stylesheet">
+    <style>
+        .kbw-signature { width: 150px; height: 90px; }
+    </style>
+    <!--[if IE]>
+    <script src="excanvas.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery.signature.js"></script>
+<script>
+$(function() {
+	var sig = $('#sig').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+<style>
+    td {
+        height: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container-fluid mt-3" style="font-family: 'Arial Narrow';">
+        <form action="">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <img src="img/logo.png" alt="" style="width: 70px;">
+                    </td>
+                    <td>
+                        <h4>RSUD Dr. M Yunus Bengkulu<br>Badan Layanan Umum Daerah<br></h4>
+                        <h5>Jl. Bhayangkara Bengkulu38229 Tlp. (0736) 52004 - 51111 Fax. (0736) 52007</h5>
+                    </td>
+                    <td>
+                        <table class="table table-bordered" align="right" style="border: 3px solid black; border-radius: 10px; width: 100%; font-family: Calibri;">
+                            <tr>
+                                <td>
+                                    <div class="row mb-1">
+                                        <div class="col-md-4">
+                                            <label for="">No. MR</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            : <input type="text" id="v_01" name="v_01" style="width: 150px;" required autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <div class="col-md-4">
+                                            <label for="">Nama Lengkap</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            : <input type="text" id="v_02" name="v_02" style="width: 150px;" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <div class="col-md-4">
+                                            <label for="">Tanggal Lahir</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            : <input type="date" id="v_03" name="v_03" style="width: 150px;" required>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <h4><b>Pengkajian Awal Keperawatan dan Medis Instalasi  Gawat Darurat (Diisi oleh perawat  IGD)</b></h4>
+            <div class="row card">
+                <table class="table table-bordered" style="border: 1px solid black; width: 100%;">
+                    <thead>
+                        <tr style="height: 0px;">
+                            <th style="width: 15%;"></th>
+                            <th style="width: 15%;"></th>
+                            <th style="width: 15%;"></th>
+                            <th style="width: 15%;"></th>
+                            <th style="width: 10%;"></th>
+                            <th style="width: 10%;"></th>
+                            <th style="width: 10%;"></th>
+                            <th style="width: 10%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="text-align: center;">
+                            <td colspan="2">Tanggal, Jam Pengkajian</td>
+                            <td colspan="2">Staus Peminjaman</td>
+                            <td colspan="2">Sumber Data</td>
+                            <td colspan="2">Penanggung Jawab, Hubungan</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="date" id="v_04" name="v_04" style="width: 150px;">, 
+                                <input type="time" id="v_05" name="v_05" style="width: 100px;">
+                            </td>
+                            <td colspan="2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_1" id="t_01" value="t_01">
+                                    <label class="form-check-label" for="t_01"> Umum</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_1" id="t_02" value="t_02">
+                                    <label class="form-check-label" for="t_02"> BPJS</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_1" id="t_03" value="t_03">
+                                    <label class="form-check-label" for="t_03"> </label>
+                                    <input type="text" id="v_06" name="v_06" style="width: 100px;">
+                                </div>
+                            </td>
+                            <td colspan="2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_2" id="t_04" value="t_04">
+                                    <label class="form-check-label" for="t_04"> Pasien</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_2" id="t_05" value="t_05">
+                                    <label class="form-check-label" for="t_05"> Keluarga/</label>
+                                    <input type="text" id="v_07" name="v_07" style="width: 100px;">
+                                </div>
+                            </td>
+                            <td colspan="2">
+                                <input type="text" id="v_08" name="v_08" style="width: 150px;">, 
+                                <input type="text" id="v_09" name="v_09" style="width: 150px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="3" style="height: 200px">Keluhan utama <label for="" style="font-style: italic;">(Riwayat kejadian):</label><br><input type="text" id="v_010" name="v_010" style="width: 100%; height: 180px;"></td>
+                            <td style="width: 10%;"><b>Status fungsional</b></td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_3" id="t_06" value="t_06">
+                                    <label class="form-check-label" for="t_06"> Mandiri</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_3" id="t_07" value="t_07">
+                                    <label class="form-check-label" for="t_07"> Ketergantungan sebagian/Total</label>&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Resiko jatuh</b></td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_4" id="t_08" value="t_08">
+                                    <label class="form-check-label" for="t_08"> Tidak beresiko</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_4" id="t_09" value="t_09">
+                                    <label class="form-check-label" for="t_09"> Resiko rendah</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_4" id="t_010" value="t_010">
+                                    <label class="form-check-label" for="t_010"> Resiko tinggi</label>&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td colspan="4" rowspan="6"  style="height: fit-content"><b>Pengkajian Nyeri Dewasa:</b><br><br>
+                                <div class="row">
+                                    <!-- <img src="img/skala_angka.png" alt="" style="width: 100%;"><br>  -->
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <span class="awal"></span>
+                                        <input type="range" name="slider" id="slider" min="0" max="10" step="1" style="width: 95%;">
+                                        <span class="akhir"></span>
+                                        <div class="row" style="width: 100%; align-content: center;">
+                                            <div class="col-md-4">
+                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Ringan</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Sedang</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Berat</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <img src="img/skala_animasi.png" alt="" style="width: 100%;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 12%;">Keadaan Umum</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_5" id="t_011" value="t_011">
+                                    <label class="form-check-label" for="t_011"> Sakit ringan</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_5" id="t_012" value="t_012">
+                                    <label class="form-check-label" for="t_012"> Sakit sedang</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_5" id="t_013" value="t_013">
+                                    <label class="form-check-label" for="t_013"> Sakit berat</label>&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Riwayat Alergi</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_6" id="t_014" value="t_014">
+                                    <label class="form-check-label" for="t_014"> Tidak ada</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_6" id="t_015" value="t_015">
+                                    <label class="form-check-label" for="t_015"> Ada</label>
+                                    <input type="text" id="v_010" name="v_010" style="width: 100px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Riwayat Kesehatan</td>
+                            <td colspan="3">
+                                <input type="text" id="v_011" name="v_011" style="width: 300px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pengobatan</td>
+                            <td colspan="3">
+                                <input type="text" id="v_012" name="v_012" style="width: 300px;">
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle;">
+                            <td rowspan="3">Tanda-tanda Vital</td>
+                            <td colspan="3" rowspan="2" style="height: 80px;">TD: <input type="text" id="v_013" name="v_013" style="width: 100px;">mmHg HR: <input type="text" id="v_014" name="v_014" style="width: 50px;">x/Mnt RR: <input type="text" id="v_015" name="v_015" style="width: 50px;">x/mnt</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="8" style="text-align: center; height: fit-content;"><b>Skala Nyeri Untuk Anak (Skala Flacc):</b><br>
+                                <table class="table table-bordered" align="center" style="border: 1px solid black; width: 97%; text-align: left;">
+                                    <tr style="text-align: center;">
+                                        <td style="width: 10%;">PENGKAJIAN</td>
+                                        <td style="width: 26%;">0</td>
+                                        <td style="width: 26%;">1</td>
+                                        <td style="width: 26%;">2</td>
+                                        <td style="width: 7%;">NILAI</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wajah</td>
+                                        <td>Tersenyum, tidak ada ekspresi khusus</td>
+                                        <td>Terkadang meringis/menarik diri</td>
+                                        <td>Sering menggetarkan dagu dan mengatupkan rahang</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kaki</td>
+                                        <td>Gerakan normal/relaksasi</td>
+                                        <td>Tidak tenang/tegang</td>
+                                        <td>Kaki dibuat menendang/menarik diri</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aktifitas</td>
+                                        <td>Tidur, posisi normal, mudah bergerak</td>
+                                        <td>Gerakan menggeliat/berguling/kaku</td>
+                                        <td>Melengkungkan punggung/kaku/menghentak</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Menangis</td>
+                                        <td>Tidak menangis (bangun/tidur)</td>
+                                        <td>Mengerang, merengek-rengek</td>
+                                        <td>Menangis terus menerus, terisak, menjerit</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bersuara</td>
+                                        <td>Bersuara normal, tenang</td>
+                                        <td>Tenang bila dipeluk, digendong atau diajak bicara</td>
+                                        <td>Sulit untuk menenangkan</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: center;">TOTAL SKOR</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle; height: 80px;">
+                            <td colspan="3">SPO2: <input type="text" id="v_016" name="v_016" style="width: 50px;">% Suhu:<input type="text" id="v_017" name="v_017" style="width: 50px;"> BB/TB/PB: <input type="text" id="v_018" name="v_018" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Jalan Nafas (A)</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_7" id="t_016" value="t_016">
+                                    <label class="form-check-label" for="t_016"> Bebas</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_7" id="t_017" value="t_017">
+                                    <label class="form-check-label" for="t_017"> Sumbatan (Oedema/Benda Asing/Cairan)</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_7" id="t_018" value="t_018">
+                                    <label class="form-check-label" for="t_018"> Terintubasi</label>&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle; height: 80px;">
+                            <td>Pernafasan (B)</td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_8" id="t_019" value="t_019">
+                                            <label class="form-check-label" for="t_019"> Normal</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_8" id="t_020" value="t_020">
+                                            <label class="form-check-label" for="t_020"> Henti nafas</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_8" id="t_021" value="t_021">
+                                            <label class="form-check-label" for="t_021"> Dsistres pernafasan ringan</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_8" id="t_022" value="t_022">
+                                            <label class="form-check-label" for="t_022"> Dsistres pernafasan sedang</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_8" id="t_023" value="t_023">
+                                            <label class="form-check-label" for="t_023"> Dsistres pernafasan berat</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle; height: 80px;">
+                            <td>Cirkulasi (C)</td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_024" value="t_024">
+                                            <label class="form-check-label" for="t_024"> Normal</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_025" value="t_025">
+                                            <label class="form-check-label" for="t_025"> Henti jantung</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_026" value="t_026">
+                                            <label class="form-check-label" for="t_026"> Bradicardi</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_027" value="t_027">
+                                            <label class="form-check-label" for="t_027"> Tacicardi</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_028" value="t_028">
+                                            <label class="form-check-label" for="t_028"> Akral dingin</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_9" id="t_029" value="t_029">
+                                            <label class="form-check-label" for="t_029"> Sianosisi</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle; height: 80px;">
+                            <td>Kesadaran (D)</td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> 14-15 Composmentis</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_031" value="t_031">
+                                            <label class="form-check-label" for="t_031"> 12-13 Apastis</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_032" value="t_032">
+                                            <label class="form-check-label" for="t_032"> 10-11 Delirium</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_033" value="t_033">
+                                            <label class="form-check-label" for="t_033"> 7-9 Samnolen</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_034" value="t_034">
+                                            <label class="form-check-label" for="t_034"> 5-6 Sopor</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_10" id="t_035" value="t_035">
+                                            <label class="form-check-label" for="t_035"> 3-4 Coma</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Eksposur</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_11" id="t_036" value="t_036">
+                                    <label class="form-check-label" for="t_036"> TAK </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_11" id="t_037" value="t_037">
+                                    <label class="form-check-label" for="t_037"> Paraperesis </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_11" id="t_038" value="t_038">
+                                    <label class="form-check-label" for="t_038"> Parase </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_11" id="t_039" value="t_039">
+                                    <label class="form-check-label" for="t_039"> Plegi </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_11" id="t_040" value="t_040">
+                                    <label class="form-check-label" for="t_040"> Pendarahan/fraktur</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="vertical-align: middle;">Status Psikologi</td>
+                            <td colspan="3" rowspan="2" style="height: 80px; vertical-align: middle;">
+                                <div class="row mb-1">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_12" id="t_041" value="t_041">
+                                            <label class="form-check-label" for="t_041"> Stabil/tenang</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_12" id="t_042" value="t_042">
+                                            <label class="form-check-label" for="t_042"> Cemas/takut/sedih/depresi</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_12" id="t_043" value="t_043">
+                                            <label class="form-check-label" for="t_043"> Marah</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_12" id="t_044" value="t_044">
+                                            <label class="form-check-label" for="t_044"> Potensial bunuh diri</label>&nbsp;
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_12" id="t_045" value="t_045">
+                                            <label class="form-check-label" for="t_045"> Mencederai orang lain/lingkungan</label>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" rowspan="4">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Tidak nyeri</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        : 0
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Ringan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        : 1-3
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Sedang</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        : 4-6
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Berat</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        : 7-10
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Akut</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_13" id="t_044">
+                                            <label class="form-check-label" for="t_044">Kronis</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="2" rowspan="4">
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label for="">Lokasi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        : <input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label for=""></label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        &nbsp;&nbsp;<input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label for="">Frekuensi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        : <input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label for="">Karakteristik</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        : <input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <label for="">Durasi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        : <input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle; height: 80px;">
+                            <td>Budaya / Kebiasaan</td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_14" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> Tidak ada </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_14" id="t_031" value="t_031">
+                                            <label class="form-check-label" for="t_031"> Merokok </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_14" id="t_032" value="t_032">
+                                            <label class="form-check-label" for="t_032"> Minum alkohol </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_14" id="t_032" value="t_032">
+                                            <input type="text" id="v_0" name="v_0" style="width: 100px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Nilai kepercayaan terhadap penyakit</label>
+                                        <input type="text" id="v_0" name="v_0" style="width: 100px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Riwayat Gangguan Jiwa</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_15" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Tidak ada </label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_15" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Ada </label>
+                                    <input type="text" id="v_0" name="v_0" style="width: 100px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trauma Psikis</td>
+                            <td colspan="3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_16" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Tidak ada </label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_16" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Aniaya fisik/psikologi/KDRT/kriminal </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="vertical-align: middle;">Status Sosial</td>
+                            <td colspan="3">Hubungan dengan anggota keluarga: 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_17" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Baik</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_17" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Tidak</label>
+                                </div>
+                            </td>
+                            <td colspan="3"><b>Skrining Gizi Dewasa</b></td>
+                            <td style="text-align: center;"><b>Hasil</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Tempat tinggal: 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_18" id="t_030" value="t_030">
+                                    <label class="form-check-label" for="t_030"> Rumah sendiri</label>&nbsp;
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_18" id="t_030" value="t_030">
+                                    <input type="text" id="v_0" name="v_0" style="width: 150px;">
+                                </div>
+                            </td>
+                            <td colspan="3" rowspan="2" style="vertical-align: middle;">
+                                <div class="row mb-2">
+                                    <div class="col">Apakah terdapat penyakit resiko malnutrisi seperti</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">(DM, CKD, Troid, Kanker, dll)</div>
+                                </div>
+                            </td>
+                            <td rowspan="2" style="text-align: center;">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="radio_19" id="t_030" value="t_030">
+                                        <label class="form-check-label" for="t_030"> Ya</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="radio_19" id="t_030" value="t_030">
+                                        <label class="form-check-label" for="t_030"> Tidak</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: middle;">
+                            <td rowspan="2">Ekonomi</td>
+                            <td colspan="3" rowspan="2">
+                                <div class="row mb-1">
+                                    <div class="col">
+                                        <label for="">Pekerjaan: </label>
+                                        <input type="text" id="v_0" name="v_0" style="width: 100px;">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label for="">Hambatan ekonomi: </label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_20" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> Tidak </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_20" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> Ya </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" id="v_0" name="v_0" style="width: 100%;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><b>Skrining Gizi Anak</b></td>
+                            <td style="text-align: center;"><b>Hasil</b></td>
+                        </tr>
+                        <tr style="vertical-align: middle;">
+                            <td rowspan="2">Spiritual</td>
+                            <td colspan="3" rowspan="2">
+                                <div class="row mb-1">
+                                    <div class="col">
+                                        <label for="">Kebutuhan konseling Spiritual/Agama:</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_21" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> Tidak </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_21" id="t_030" value="t_030">
+                                            <label class="form-check-label" for="t_030"> Ya </label>
+                                            <input type="text" id="v_0" name="v_0" style="width: 100px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" id="v_0" name="v_0" style="width: 100%;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="3" rowspan="2">
+                                <div class="row mb-2">
+                                    <div class="col">Apakah terdapat penyakit resiko malnutrisi seperti</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">(TBC, Kelainan Anatomis, dll)</div>
+                                </div>
+                            </td>
+                            <td rowspan="2" style="text-align: center;">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="radio_22" id="t_030" value="t_030">
+                                        <label class="form-check-label" for="t_030"> Ya</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="radio_22" id="t_030" value="t_030">
+                                        <label class="form-check-label" for="t_030"> Tidak</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <script>
+        const slider = document.querySelector('#slider');
+        const awal = document.querySelector('.awal');
+        const akhir = document.querySelector('.akhir');
+
+        awal.innerHTML = slider.min;
+        akhir.innerHTML = slider.value;
+        slider.addEventListener('input', function(){
+            akhir.innerHTML = slider.value;
+        })
+    </script>
+</body>
+</html>

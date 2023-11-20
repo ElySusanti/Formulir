@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Laporan Pemakaian Instrumen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery.signature.css" rel="stylesheet">
+    <style>
+        .kbw-signature { width: 150px; height: 90px; }
+    </style>
+    <!--[if IE]>
+    <script src="excanvas.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery.signature.js"></script>
+<script>
+$(function() {
+	var sig = $('#sig').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+<script>
+$(function() {
+	var sig = $('#sig1').signature();
+	$('#disable').click(function() {
+		var disable = $(this).text() === 'Disable';
+		$(this).text(disable ? 'Enable' : 'Disable');
+		sig.signature(disable ? 'disable' : 'enable');
+	});
+	$('#clear').click(function() {
+		sig.signature('clear');
+	});
+	$('#json').click(function() {
+		alert(sig.signature('toJSON'));
+	});
+	$('#svg').click(function() {
+		alert(sig.signature('toSVG'));
+	});
+});
+</script>
+</head>
+<body>
+    <div class="container" style="font-family: 'Times New Roman';">
+        <form action="" autocomplete="off">
+            <div class="row">
+                <div class="col md-6 text-start"><h3><b>RSUD Dr. M. YUNUS BENGKULU</b></h3></div>
+                <div class="col md-6 text-end"><h3><b>RM. 10 Lanjutan 4</b></h3></div>
+            </div>
+            <table class="table table-bordered" style="border: 3px solid black; width: 100%;">
+                <tr style="border: 3px solid black;">
+                    <td style="vertical-align: middle; text-align: center; width: 60%; font-size: 25px;"><b>LAPORAN PEMAKAIAN INSTRUMEN BEDAH</b></td>
+                    <td style="width: 40%; text-align: left; border: 3px solid black;">
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="">Nama</label>
+                            </div>
+                            <div class="col-md-9">
+                                : <input type="text" id="v_01" name="v_01" style="width: 250px;" required autofocus>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="">Tgl. Lahir</label>
+                            </div>
+                            <div class="col-md-9">
+                                : <input type="date" id="v_02" name="v_02" style="width: 150px;" required>&nbsp;
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_01" value="option1">
+                                <label class="form-check-label" for="t_01">L / </label>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_02" value="option2">
+                                <label class="form-check-label" for="t_02">P</label>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="">Register</label>
+                            </div>
+                            <div class="col-md-9">
+                                : <input type="text" id="v_03" name="v_03" style="width: 150px;" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="">Ruang Rawat</label>
+                            </div>
+                            <div class="col-md-9">
+                                : <input type="text" id="v_04" name="v_04" style="width: 150px;" required> (Stiker Pasien)
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Nama Set Instrumen</label>&nbsp;
+                                : <input type="text" id="v_05" name="v_05" style="width: 500px;" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <table class="table table-bordered" align="center" style="border: 1px; color: black; width: 97%;">
+                                <tr style="text-align: center;">
+                                    <td style="width: 5%;"><b>No</b></td>
+                                    <td style="width: 17%;"><b>Nama Instrumen</b></td>
+                                    <td><b>Jumlah Pre Operasi</b></td>
+                                    <td><b>Jumlah Post Operasi</b></td>
+                                    <td><b>Keterangan</b></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">1. </td>
+                                    <td>Klem Pencuci</td>
+                                    <td><input type="text" id="v_06" name="v_06" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_07" name="v_07" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_08" name="v_08" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">2. </td>
+                                    <td>Duck klam</td>
+                                    <td><input type="text" id="v_09" name="v_09" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_010" name="v_010" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_011" name="v_011" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">3. </td>
+                                    <td>Tangki mess no.</td>
+                                    <td><input type="text" id="v_012" name="v_012" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_013" name="v_013" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_014" name="v_014" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">4. </td>
+                                    <td>Pinset anatomi B/S</td>
+                                    <td><input type="text" id="v_015" name="v_015" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_016" name="v_016" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_017" name="v_017" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">5. </td>
+                                    <td>Pinset Chirugis B/S</td>
+                                    <td><input type="text" id="v_018" name="v_018" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_019" name="v_019" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_020" name="v_020" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">6. </td>
+                                    <td>Needle holder</td>
+                                    <td><input type="text" id="v_021" name="v_021" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_022" name="v_022" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_023" name="v_023" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">7. </td>
+                                    <td>Nald heating kulit</td>
+                                    <td><input type="text" id="v_024" name="v_024" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_025" name="v_025" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_026" name="v_026" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">8. </td>
+                                    <td>Nald heating otot</td>
+                                    <td><input type="text" id="v_027" name="v_027" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_028" name="v_028" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_029" name="v_029" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">9. </td>
+                                    <td>Gunting jaringan</td>
+                                    <td><input type="text" id="v_030" name="v_030" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_031" name="v_031" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_032" name="v_032" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">10. </td>
+                                    <td>Gunting benang</td>
+                                    <td><input type="text" id="v_033" name="v_033" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_034" name="v_034" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_035" name="v_035" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">11. </td>
+                                    <td>Gunting Kassa</td>
+                                    <td><input type="text" id="v_036" name="v_036" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_037" name="v_037" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_038" name="v_038" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">12. </td>
+                                    <td>Klem preparer</td>
+                                    <td><input type="text" id="v_039" name="v_039" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_040" name="v_040" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_041" name="v_041" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">13. </td>
+                                    <td>Klem arteri/mosquito</td>
+                                    <td><input type="text" id="v_042" name="v_042" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_043" name="v_043" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_044" name="v_044" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">14. </td>
+                                    <td>Klem arteri/mosquito</td>
+                                    <td><input type="text" id="v_045" name="v_045" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_046" name="v_046" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_047" name="v_047" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">15. </td>
+                                    <td>Klem kocher</td>
+                                    <td><input type="text" id="v_048" name="v_048" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_049" name="v_049" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_050" name="v_050" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">16. </td>
+                                    <td>allis klem </td>
+                                    <td><input type="text" id="v_051" name="v_051" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_052" name="v_052" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_053" name="v_053" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">17. </td>
+                                    <td>Klem Miculicz</td>
+                                    <td><input type="text" id="v_054" name="v_054" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_055" name="v_055" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_056" name="v_056" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">18. </td>
+                                    <td>Langen haag</td>
+                                    <td><input type="text" id="v_057" name="v_057" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_058" name="v_058" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_059" name="v_059" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">19. </td>
+                                    <td>Haag kecil</td>
+                                    <td><input type="text" id="v_060" name="v_060" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_061" name="v_061" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_062" name="v_062" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">20. </td>
+                                    <td>Haag besar</td>
+                                    <td><input type="text" id="v_063" name="v_063" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_064" name="v_064" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_065" name="v_065" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">21. </td>
+                                    <td>Bengkok</td>
+                                    <td><input type="text" id="v_066" name="v_066" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_067" name="v_067" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_068" name="v_068" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">22. </td>
+                                    <td>Kom B/S</td>
+                                    <td><input type="text" id="v_069" name="v_069" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_070" name="v_070" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_071" name="v_071" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">23. </td>
+                                    <td>Kasa besar</td>
+                                    <td><input type="text" id="v_072" name="v_072" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_073" name="v_073" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_074" name="v_074" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">24. </td>
+                                    <td>Kasa kecil</td>
+                                    <td><input type="text" id="v_075" name="v_075" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_076" name="v_076" style="width: 300px;"></td>
+                                    <td><input type="text" id="v_077" name="v_077" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">25. </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">26. </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <b>KONDISI STERILISASI</b><br>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <input type="text" id="v_078" name="v_78" style="width: 100%; height: 80px;"> 
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Alat / Item</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_079" name="v_079" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Load</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_080" name="v_080" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Tanggal Steril</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="date" id="v_081" name="v_081" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <input type="text" id="v_082" name="v_82" style="width: 100%; height: 80px;"> 
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Alat / Item</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_083" name="v_083" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Load</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_084" name="v_084" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Tanggal Steril</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="date" id="v_085" name="v_085" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <input type="text" id="v_086" name="v_86" style="width: 100%; height: 80px;"> 
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Alat / Item</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_087" name="v_087" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label for="">Load</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="text" id="v_088" name="v_088" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="">Tanggal Steril</label>
+                            </div>
+                            <div class="col-md-10">
+                                : <input type="date" id="v_089" name="v_089" style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table style="justify-content: center; width: 100%;">
+                                <tr>
+                                    <td style="text-align: center; width: 50%;">
+                                        <label for="" style="text-align: center;">Perawat Instrumen</label>
+                                        <br><div id="sig"></div>
+                                        <br>( <input type="text" id="v_090" name="v_090" style="width: 150px;"> )
+                                        <br>Tanda tangan dan nama lengkap
+                                    </td>
+                                    <td style="text-align: center; width: 50%;">
+                                        <label for="" style="text-align: center;">Perawat Sirkuler</label>
+                                        <br><div id="sig1"></div>
+                                        <br>( <input type="text" id="v_091" name="v_091" style="width: 150px;"> )
+                                        <br>Tanda tangan dan nama lengkap
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
