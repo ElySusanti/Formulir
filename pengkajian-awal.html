@@ -101,25 +101,14 @@ $(function() {
             <div class="row card">
                 <table class="table table-bordered" style="border: 1px solid black; width: 100%;">
                     <thead>
-                        <tr style="height: 0px;">
-                            <th style="width: 15%;"></th>
-                            <th style="width: 15%;"></th>
-                            <th style="width: 15%;"></th>
-                            <th style="width: 13%;"></th>
-                            <th style="width: 8%;"></th>
-                            <th style="width: 10%;"></th>
-                            <th style="width: 14%;"></th>
-                            <th style="width: 10%;"></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr style="text-align: center;">
                             <td colspan="2">Tanggal, Jam Pengkajian</td>
-                            <td colspan="2">Staus Peminjaman</td>
-                            <td colspan="2">Sumber Data</td>
-                            <td colspan="2">Penanggung Jawab, Hubungan</td>
+                            <td colspan="2" style="width: 28%;">Status Peminjaman</td>
+                            <td colspan="2" style="width: 20%;">Sumber Data</td>
+                            <td colspan="2" style="width: 24%;">Penanggung Jawab, Hubungan</td>
                         </tr>
-                        <tr>
+                        <tr style="text-align: center;">
                             <td colspan="2">
                                 <input type="date" id="v_04" name="v_04" style="width: 150px;">, 
                                 <input type="time" id="v_05" name="v_05" style="width: 100px;">
@@ -187,35 +176,33 @@ $(function() {
                             </td>
                         </tr>
                         <tr style="text-align: center;">
-                            <td colspan="4" rowspan="6"  style="height: fit-content"><b>Pengkajian Nyeri Dewasa:</b><br><br>
+                            <td colspan="4" rowspan="6">
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <b>Pengkajian Nyeri Dewasa:</b>
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <!-- <img src="img/skala_angka.png" alt="" style="width: 100%;"><br>  -->
+                                    <div class="col">
+                                        <img src="img/skala_angka.png" alt="" style="width: 95%;">
+                                    </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
                                         <span class="awal"></span>
                                         <input type="range" name="slider" id="slider" min="0" max="10" step="1" style="width: 95%;">
                                         <span class="akhir"></span>
-                                        <div class="row" style="width: 100%; align-content: center;">
-                                            <div class="col-md-4">
-                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Ringan</div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Sedang</div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="box" style="border: 1px solid black; width: 100px; height: 40px;">Berat</div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <img src="img/skala_animasi.png" alt="" style="width: 100%;">
+                                    <div class="col">
+                                        <img src="img/skala_animasi.png" alt="" style="width: 95%;">
+                                    </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 12%;">Keadaan Umum</td>
+                            <td style="width: 15%;">Keadaan Umum</td>
                             <td colspan="3">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="radio_5" id="t_011" value="t_011">
@@ -260,15 +247,15 @@ $(function() {
                         <tr style="vertical-align: middle;">
                             <td rowspan="2">Tanda-tanda Vital</td>
                             <td colspan="3" style="height: 60px;">
-                                TD: <input type="text" id="v_014" name="v_014" style="width: 100px;">mmHg 
-                                HR: <input type="text" id="v_015" name="v_015" style="width: 50px;">x/Mnt 
-                                RR: <input type="text" id="v_016" name="v_016" style="width: 50px;">x/mnt
+                                TD: <input type="text" id="v_014" name="v_014" style="width: 100px;"> mmHg &nbsp;
+                                HR: <input type="text" id="v_015" name="v_015" style="width: 50px;"> x/Mnt &nbsp;
+                                RR: <input type="text" id="v_016" name="v_016" style="width: 50px;"> x/mnt
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3"  style="vertical-align: middle;">
-                                SPO2: <input type="text" id="v_017" name="v_017" style="width: 50px;">% 
-                                Suhu:<input type="text" id="v_018" name="v_018" style="width: 50px;"> 
+                                SPO2: <input type="text" id="v_017" name="v_017" style="width: 50px;"> % &nbsp;
+                                Suhu:<input type="text" id="v_018" name="v_018" style="width: 50px;"> &nbsp;
                                 BB/TB/PB: <input type="text" id="v_019" name="v_019" style="width: 100px;">
                             </td>
                             <td colspan="4" rowspan="7" style="text-align: center;">
@@ -602,23 +589,23 @@ $(function() {
                                         <label for="">Lokasi</label>
                                     </div>
                                     <div class="col-md-8">
-                                        : <input type="text" id="v_028" name="v_028" style="width: 150px;">
+                                        : <input type="text" id="v_028" name="v_028" style="width: 150px; height: 70px;">
                                     </div>
                                 </div>
-                                <div class="row mb-2">
+                                <!-- <div class="row mb-2">
                                     <div class="col-md-4">
                                         <label for=""></label>
                                     </div>
                                     <div class="col-md-8">
-                                        &nbsp;&nbsp;<input type="text" id="v_029" name="v_029" style="width: 150px;">
+                                        &nbsp;&nbsp;<input type="text" id="v_028" name="v_028" style="width: 150px;">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row mb-2">
                                     <div class="col-md-4">
                                         <label for="">Frekuensi</label>
                                     </div>
                                     <div class="col-md-8">
-                                        : <input type="text" id="v_030" name="v_030" style="width: 150px;">
+                                        : <input type="text" id="v_029" name="v_029" style="width: 150px;">
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -626,7 +613,7 @@ $(function() {
                                         <label for="">Karakteristik</label>
                                     </div>
                                     <div class="col-md-8">
-                                        : <input type="text" id="v_031" name="v_031" style="width: 150px;">
+                                        : <input type="text" id="v_030" name="v_030" style="width: 150px;">
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -634,7 +621,7 @@ $(function() {
                                         <label for="">Durasi</label>
                                     </div>
                                     <div class="col-md-8">
-                                        : <input type="text" id="v_032" name="v_032" style="width: 150px;">
+                                        : <input type="text" id="v_031" name="v_031" style="width: 150px;">
                                     </div>
                                 </div>
                             </td>
@@ -649,7 +636,7 @@ $(function() {
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="radio_15" id="t_057" value="t_057">
                                     <label class="form-check-label" for="t_057"> Ada </label>
-                                    <input type="text" id="v_033" name="v_033" style="width: 100px;">
+                                    <input type="text" id="v_032" name="v_032" style="width: 100px;">
                                 </div>
                             </td>
                         </tr>
@@ -691,7 +678,7 @@ $(function() {
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="radio_18" id="t_063" value="t_063">
-                                            <input type="text" id="v_034" name="v_034" style="width: 150px;">
+                                            <input type="text" id="v_033" name="v_033" style="width: 150px;">
                                         </div>
                                     </div>
                                 </div>
@@ -712,7 +699,7 @@ $(function() {
                                 <div class="row mb-1">
                                     <div class="col">
                                         <label for="">Pekerjaan: </label>
-                                        <input type="text" id="v_035" name="v_035" style="width: 100px;">
+                                        <input type="text" id="v_034" name="v_034" style="width: 100px;">
                                     </div>
                                     <div class="col-md-7">
                                         <label for="">Hambatan ekonomi: </label>
@@ -728,7 +715,7 @@ $(function() {
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" id="v_036" name="v_036" style="width: 100%;">
+                                        <input type="text" id="v_035" name="v_035" style="width: 100%;">
                                     </div>
                                 </div>
                             </td>
@@ -755,13 +742,13 @@ $(function() {
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="radio_21" id="t_069" value="t_069">
                                             <label class="form-check-label" for="t_069"> Ya </label>
-                                            <input type="text" id="v_037" name="v_037" style="width: 100px;">
+                                            <input type="text" id="v_036" name="v_036" style="width: 100px;">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" id="v_038" name="v_038" style="width: 100%;">
+                                        <input type="text" id="v_037" name="v_037" style="width: 100%;">
                                     </div>
                                 </div>
                             </td>
@@ -857,7 +844,7 @@ $(function() {
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="radio_26" id="t_085">
-                                                    <input type="text" id="v_039" name="v_039" style="width: 200px;">
+                                                    <input type="text" id="v_038" name="v_038" style="width: 200px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -884,11 +871,11 @@ $(function() {
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="radio_27" id="t_090">
-                                                    <input type="text" id="v_040" name="v_040" style="width: 200px;">
+                                                    <input type="text" id="v_039" name="v_039" style="width: 200px;">
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="radio_27" id="t_091">
-                                                    <input type="text" id="v_041" name="v_041" style="width: 200px;">
+                                                    <input type="text" id="v_040" name="v_040" style="width: 200px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -901,15 +888,15 @@ $(function() {
                                                 </div>
                                                 <div class="form-check mb-5">
                                                     <input class="form-check-input" type="radio" name="radio_28" id="t_093">
-                                                    <input type="text" id="v_042" name="v_042" style="width: 200px;">
+                                                    <input type="text" id="v_041" name="v_041" style="width: 200px;">
                                                 </div>
                                                 <div class="form-check mb-5">
                                                     <input class="form-check-input" type="radio" name="radio_28" id="t_094">
-                                                    <input type="text" id="v_043" name="v_043" style="width: 200px;">
+                                                    <input type="text" id="v_042" name="v_042" style="width: 200px;">
                                                 </div>
                                                 <div class="form-check mb-5">
                                                     <input class="form-check-input" type="radio" name="radio_28" id="t_095">
-                                                    <input type="text" id="v_044" name="v_044" style="width: 200px;">
+                                                    <input type="text" id="v_043" name="v_043" style="width: 200px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -994,7 +981,7 @@ $(function() {
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="radio_29" id="t_0114">
-                                            <input type="text" id="v_045" name="v_045" style="width: 300px;">
+                                            <input type="text" id="v_044" name="v_044" style="width: 300px;">
                                         </div>
                                     </div>
                                 </div>
@@ -1044,7 +1031,7 @@ $(function() {
                                 <div class="row">
                                     <div class="col">
                                         Jam selesai pengkajian
-                                        <input type="time" id="v_046" name="v_046" style="width: 100px;">
+                                        <input type="time" id="v_045" name="v_045" style="width: 100px;">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -1053,7 +1040,7 @@ $(function() {
                                             <td style="text-align: center; width: 50%;">
                                                 <label for="" style="text-align: center;">Perawat Pengkaji (PPJA)</label>
                                                 <br><div id="sig"></div>
-                                                <br>( <input type="text" id="v_047" name="v_047" style="width: 150px;"> )
+                                                <br>( <input type="text" id="v_046" name="v_046" style="width: 150px;"> )
                                             </td>
                                         </tr>
                                     </table>
@@ -1085,12 +1072,12 @@ $(function() {
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="radio_32" id="t_0128">
-                                            <input type="text" id="v_048" name="v_048" style="width: 300px;">
+                                            <input type="text" id="v_047" name="v_047" style="width: 300px;">
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="radio_32" id="t_0129">
                                             <label class="form-check-label" for="t_0129">Lain-lain</label>
-                                            <input type="text" id="v_049" name="v_049" style="width: 200px;">
+                                            <input type="text" id="v_048" name="v_048" style="width: 200px;">
                                         </div>
                                     </div>
                                 </div>
