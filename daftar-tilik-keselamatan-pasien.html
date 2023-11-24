@@ -107,25 +107,33 @@ $(function() {
                         <table style="text-align: left;">
                             <tr>
                                 <td>
-                                    <label for="">Nama </label>
-                                </td>
-                                <td>: <input type="text" name="v_01" id="v_01" style="width: 100px;" autofocus>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_01" value="option1"><label class="form-check-label" for="t_01"> L / </label><input class="form-check-input" type="radio" name="inlineRadioOptions" id="t_02" value="option2"><label class="form-check-label" for="t_02"> P &nbsp;&nbsp;&nbsp;
+                                    <label for="v_01">Nama </label>
                                 </td>
                                 <td>
-                                    <label for="">No. Reg </label>
+                                    : <input type="text" name="v_01" id="v_01" style="width: 100px;" readonly>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="t_01" id="t_01_l" value="0" readonly>
+                                        <label class="form-check-label" for="t_01_l"> L/</label>&nbsp;
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="t_01" id="t_01_p" value="1" readonly>
+                                        <label class="form-check-label" for="t_01_p"> P</label>&nbsp;
+                                    </div>
                                 </td>
-                                <td>: <input type="text" name="v_02" id="v_02" style="width: 100px;"></td>
+                                <td>
+                                    <label for="v_02">No. Reg </label>
+                                </td>
+                                <td>: <input type="text" name="v_02" id="v_02" style="width: 100px;" readonly></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="">Tanggal Lahir </label>
+                                    <label for="v_03">Tanggal Lahir </label>
                                 </td>
-                                <td>: <input type="date" name="v_03" id="v_03" style="width: 100px;"></td>
+                                <td>: <input type="date" name="v_03" id="v_03" style="width: 100px;" readonly></td>
                                 <td>
-                                    <label for="">Ruang Rawat </label>
+                                    <label for="v_04">Ruang Rawat </label>
                                 </td>
-                                <td>: <input type="text" name="v_04" id="v_04" style="width: 100px;"></td>
+                                <td>: <input type="text" name="v_04" id="v_04" style="width: 100px;" readonly></td>
                             </tr>
                         </table>
                     </td>
@@ -153,27 +161,27 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_03" name="t_03">
-                                    <label class="form-check-label" for="t_03">Identitas dan gelang pasien</label>
+                                    <input class="form-check-input" type="checkbox" name="t_02" id="t_02_identitas">
+                                    <label class="form-check-label" for="t_02_identitas">Identitas dan gelang pasien</label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="t_04" name="t_04">
-                                    <label class="form-check-label" for="t_04">Informed consent</label>
+                                    <input class="form-check-input" type="checkbox" name="t_02" id="t_02_informed">
+                                    <label class="form-check-label" for="t_02_informed">Informed consent</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_05" name="t_05">
-                                    <label class="form-check-label" for="t_05">Dokter ahli bedah, </label>
-                                    (dr. <input type="text" name="v_05" id="v_05" style="width: 200px;"> )
+                                    <input class="form-check-input" type="checkbox" name="t_02" id="t_02_dokterbedah" onclick="fungsi1()">
+                                    <label class="form-check-label" for="t_02_dokterbedah">Dokter ahli bedah, </label>
+                                    (dr. <input type="text" name="v_05" id="v_05" style="width: 200px;" disabled> )
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_06" name="t_06">
-                                    <label class="form-check-label" for="t_06">Dokter ahli anestesi, </label>
-                                    (dr. <input type="text" name="v_06" id="v_06" style="width: 200px;"> )
+                                    <input class="form-check-input" type="checkbox" name="t_02" id="t_02_dokteranastesi" onclick="fungsi2()">
+                                    <label class="form-check-label" for="t_02_dokteranastesi">Dokter ahli anestesi, </label>
+                                    (dr. <input type="text" name="v_06" id="v_06" style="width: 200px;" disabled> )
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_07" name="t_07">
-                                    <label class="form-check-label" for="t_07">Nama tindakan operasi: </label>
-                                    <input type="text" name="v_07" id="v_07" style="width: 200px;">
+                                    <input class="form-check-input" type="checkbox" name="t_02" id="t_02_namatindakan" onclick="fungsi3()">
+                                    <label class="form-check-label" for="t_02_namatindakan">Nama tindakan operasi: </label>
+                                    <input type="text" name="v_07" id="v_07" style="width: 200px;" disabled>
                                 </div>
                             </div>
                         </div>
@@ -183,12 +191,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_08" name="t_08">
-                                    <label class="form-check-label" for="t_08">Ya</label>
+                                    <input class="form-check-input" type="checkbox" name="t_03" id="t_03_ya">
+                                    <label class="form-check-label" for="t_03_ya">Ya</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_09" name="t_09">
-                                    <label class="form-check-label" for="t_09">Tidak diperlukan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_03" id="t_03_tidak">
+                                    <label class="form-check-label" for="t_03_tidak">Tidak diperlukan</label>
                                 </div>
                             </div>
                         </div>
@@ -198,20 +206,20 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_010" name="t_010">
-                                    <label class="form-check-label" for="t_010">Mesin anastesi</label>
+                                    <input class="form-check-input" type="checkbox" name="t_04" id="t_04_mesin">
+                                    <label class="form-check-label" for="t_04_mesin">Mesin anastesi</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_011" name="t_011">
-                                    <label class="form-check-label" for="t_011">Obat-obatan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_04" id="t_04_obat">
+                                    <label class="form-check-label" for="t_04_obat">Obat-obatan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_012" name="t_012">
-                                    <label class="form-check-label" for="t_012">IV line</label>
+                                    <input class="form-check-input" type="checkbox" name="t_04" id="t_04_iv">
+                                    <label class="form-check-label" for="t_04_iv">IV line</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_013" name="t_013">
-                                    <label class="form-check-label" for="t_013">Laboratorium</label>
+                                    <input class="form-check-input" type="checkbox" name="t_04" id="t_04_laboratorium">
+                                    <label class="form-check-label" for="t_04_laboratorium">Laboratorium</label>
                                 </div>
                             </div>
                         </div>
@@ -221,12 +229,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_014" name="t_014">
-                                    <label class="form-check-label" for="t_014">Terpasang</label>
+                                    <input class="form-check-input" type="checkbox" name="t_05" id="t_05_terpasang">
+                                    <label class="form-check-label" for="t_05_terpasang">Terpasang</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_015" name="t_015">
-                                    <label class="form-check-label" for="t_015">Tidak terpasang</label>
+                                    <input class="form-check-input" type="checkbox" name="t_05" id="t_05_tidak">
+                                    <label class="form-check-label" for="t_05_tidak">Tidak terpasang</label>
                                 </div>
                             </div>
                         </div>
@@ -236,13 +244,13 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_016" name="t_016">
-                                    <label class="form-check-label" for="t_016">Ada, keterangan </label>
-                                    <input type="text" name="v_08" id="v_08" style="width: 200px;">
+                                    <input class="form-check-input" type="checkbox" name="t_06" id="t_06_ada" onclick="fungsi4()">
+                                    <label class="form-check-label" for="t_06_ada">Ada, keterangan </label>
+                                    <input type="text" name="v_08" id="v_08" style="width: 200px;" disabled>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_017" name="t_017">
-                                    <label class="form-check-label" for="t_017">Tidak ada</label>
+                                    <input class="form-check-input" type="checkbox" name="t_06" id="t_06_tidakada">
+                                    <label class="form-check-label" for="t_06_tidakada">Tidak ada</label>
                                 </div>
                             </div>
                         </div>
@@ -252,12 +260,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_018" name="t_018">
-                                    <label class="form-check-label" for="t_018">Tidak</label>
+                                    <input class="form-check-input" type="checkbox" name="t_07" id="t_07_tidak">
+                                    <label class="form-check-label" for="t_07_tidak">Tidak</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_019" name="t_019">
-                                    <label class="form-check-label" for="t_019">Ya, bantuan lain tersedia</label>
+                                    <input class="form-check-input" type="checkbox" name="t_07" id="t_07_ya">
+                                    <label class="form-check-label" for="t_07_ya">Ya, bantuan lain tersedia</label>
                                 </div>
                             </div>
                         </div>
@@ -267,12 +275,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_020" name="t_020">
-                                    <label class="form-check-label" for="t_020">Tidak</label>
+                                    <input class="form-check-input" type="checkbox" name="t_08" id="t_08_tidak">
+                                    <label class="form-check-label" for="t_08_tidak">Tidak</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_021" name="t_021">
-                                    <label class="form-check-label" for="t_021">Ya, dengan IV line atau CVC</label>
+                                    <input class="form-check-input" type="checkbox" name="t_08" id="t_08_tidak">
+                                    <label class="form-check-label" for="t_08_tidak">Ya, dengan IV line atau CVC</label>
                                 </div>
                             </div>
                         </div>
@@ -282,20 +290,20 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_022" name="t_022">
-                                    <label class="form-check-label" for="t_022">Narkose umum</label>
+                                    <input class="form-check-input" type="checkbox" name="t_09" id="t_09_narkose">
+                                    <label class="form-check-label" for="t_09_narkose">Narkose umum</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_023" name="t_023">
-                                    <label class="form-check-label" for="t_023">Spinal/Epidural</label>
+                                    <input class="form-check-input" type="checkbox" name="t_09" id="t_09_spinal">
+                                    <label class="form-check-label" for="t_09_spinal">Spinal/Epidural</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_024" name="t_024">
-                                    <label class="form-check-label" for="t_024">Blok</label>
+                                    <input class="form-check-input" type="checkbox" name="t_09" id="t_09_blok">
+                                    <label class="form-check-label" for="t_09_blok">Blok</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_025" name="t_025">
-                                    <label class="form-check-label" for="t_025">Lokal</label>
+                                    <input class="form-check-input" type="checkbox" name="t_09" id="t_09_lokal">
+                                    <label class="form-check-label" for="t_09_lokal">Lokal</label>
                                 </div>
                             </div>
                         </div>
@@ -305,21 +313,21 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_026" name="t_026">
-                                    <label class="form-check-label" for="t_026">Tidak</label>
+                                    <input class="form-check-input" type="checkbox" name="t_010" id="t_010_tidak">
+                                    <label class="form-check-label" for="t_010_tidak">Tidak</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_027" name="t_027">
-                                    <label class="form-check-label" for="t_027">Ya, </label>
-                                    <input type="text" name="v_09" id="v_09" style="width: 200px;">
+                                    <input class="form-check-input" type="checkbox" name="t_010" id="t_010_ya" onclick="fungsi5()">
+                                    <label class="form-check-label" for="t_010_ya">Ya, </label>
+                                    <input type="text" name="v_09" id="v_09" style="width: 200px;" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="">Tanggal Verifikasi </label>
+                                <label for="v_10">Tanggal Verifikasi </label>
                                 : <input type="date" name="v_10" id="v_10" style="width: 100px;">
-                                <label for="">Jam</label>
+                                <label for="v_11">Jam</label>
                                 <input type="time" name="v_11" id="v_11" style="width: 100px;">
                             </div>
                         </div>
@@ -331,14 +339,14 @@ $(function() {
                                 <tr>
                                     <br><br><br><br><br><br>
                                     <td style="text-align: center; width: 50%;">
-                                        <label for="" style="text-align: center;">Perawat IBS</label>
+                                        <label for="v_12" style="text-align: center;">Perawat IBS</label>
                                         <br><div id="sig"></div>
-                                        <br>( <input type="text" id="v_012" name="v_012" style="width: 150px;"> )
+                                        <br>( <input type="text" id="v_12" name="v_12" style="width: 150px;"> )
                                     </td>
                                     <td style="text-align: center; width: 50%;">
-                                        <label for="" style="text-align: center;">Dokter Ahli Anastesi</label>
+                                        <label for="v_13" style="text-align: center;">Dokter Ahli Anastesi</label>
                                         <br><div id="sig1"></div>
-                                        <br>( <input type="text" id="v_013" name="v_013" style="width: 150px;"> )
+                                        <br>( <input type="text" id="v_13" name="v_13" style="width: 150px;"> )
                                     </td>
                                 </tr>
                             </table>
@@ -351,13 +359,13 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_028" name="t_028">
-                                    <label class="form-check-label" for="t_028">Lengkap, anggota tim menyebutkan nama dan perannya masing-masing</label>
+                                    <input class="form-check-input" type="checkbox" name="t_011" id="t_011_lengkap">
+                                    <label class="form-check-label" for="t_011_lengkap">Lengkap, anggota tim menyebutkan nama dan perannya masing-masing</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_029" name="t_029">
-                                    <label class="form-check-label" for="t_029">Tidak lengkap, alasan </label>
-                                    <input type="text" name="v_014" id="v_014" style="width: 200px;">
+                                    <input class="form-check-input" type="checkbox" name="t_011" id="t_011_tidaklengkap" onclick="fungsi6()">
+                                    <label class="form-check-label" for="t_011_tidaklengkap">Tidak lengkap, alasan </label>
+                                    <input type="text" name="v_14" id="v_14" style="width: 200px;" disabled>
                                 </div>
                             </div>
                         </div>
@@ -368,12 +376,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_030" name="t_030">
-                                    <label class="form-check-label" for="t_030">Dilakukan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_012" id="t_012_dilakukan">
+                                    <label class="form-check-label" for="t_012_dilakukan">Dilakukan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_031" name="t_031">
-                                    <label class="form-check-label" for="t_031">Tidak dilakukan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_012" id="t_012_tidakdilakukan">
+                                    <label class="form-check-label" for="t_012_tidakdilakukan">Tidak dilakukan</label>
                                 </div>
                             </div>
                         </div>
@@ -384,16 +392,16 @@ $(function() {
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 &nbsp;<label for=""><b>Untuk ahli bedah</b></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_031" name="t_031">
-                                    <label class="form-check-label" for="t_031">Berapa perkiraan darah yang hilang</label>
+                                    <input class="form-check-input" type="checkbox" name="t_013" id="t_013_berapa">
+                                    <label class="form-check-label" for="t_013_berapa">Berapa perkiraan darah yang hilang</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_032" name="t_032">
-                                    <label class="form-check-label" for="t_032">Adakah alat spesifik yang dibutuhkan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_013" id="t_013_adakah">
+                                    <label class="form-check-label" for="t_013_adakah">Adakah alat spesifik yang dibutuhkan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_032" name="t_032">
-                                    <label class="form-check-label" for="t_032">Apakah ada kemungkinan keadaan kritis atau langkah-langkah tidak terduga yang perlu diketahui oleh tim</label>
+                                    <input class="form-check-input" type="checkbox" name="t_013" id="t_013_apakah">
+                                    <label class="form-check-label" for="t_013_apakah">Apakah ada kemungkinan keadaan kritis atau langkah-langkah tidak terduga yang perlu diketahui oleh tim</label>
                                 </div>
                             </div>
                         </div>
@@ -401,8 +409,8 @@ $(function() {
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 &nbsp;<label for=""><b>Untuk ahli anastesi</b></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_033" name="t_033">
-                                    <label class="form-check-label" for="t_033">Apakah ada hal khusus yang perlu diketahui dari pasien ini?</label>
+                                    <input class="form-check-input" type="checkbox" name="t_014" id="t_014">
+                                    <label class="form-check-label" for="t_014">Apakah ada hal khusus yang perlu diketahui dari pasien ini?</label>
                                 </div>
                             </div>
                         </div>
@@ -410,12 +418,12 @@ $(function() {
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 &nbsp;<label for=""><b>Untuk perawat</b></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_034" name="t_034">
-                                    <label class="form-check-label" for="t_034">Apakah sterilitas instrumen sudah dikonfirmasi (sesuai indikator sterilitas)</label>
+                                    <input class="form-check-input" type="checkbox" name="t_015" id="t_015_apakahsterilitas">
+                                    <label class="form-check-label" for="t_015_apakahsterilitas">Apakah sterilitas instrumen sudah dikonfirmasi (sesuai indikator sterilitas)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_035" name="t_035">
-                                    <label class="form-check-label" for="t_035">Apakah ada masalah peralatan atau hal yang perlu diperhatikan?</label>
+                                    <input class="form-check-input" type="checkbox" name="t_015" id="t_015_apakahadamasalah">
+                                    <label class="form-check-label" for="t_015_apakahadamasalah">Apakah ada masalah peralatan atau hal yang perlu diperhatikan?</label>
                                 </div>
                             </div>
                         </div>
@@ -425,20 +433,20 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_036" name="t_036">
-                                    <label class="form-check-label" for="t_036">Antibiotika profilaksis telah diberikan sekurang-kurangnya 60 menit sebelum operasi (konfirmasi nama obat, dosis dan jam pemberian)</label>
+                                    <input class="form-check-input" type="checkbox" name="t_016" id="t_016_antibiotika">
+                                    <label class="form-check-label" for="t_016_antibiotika">Antibiotika profilaksis telah diberikan sekurang-kurangnya 60 menit sebelum operasi (konfirmasi nama obat, dosis dan jam pemberian)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_037" name="t_037">
-                                    <label class="form-check-label" for="t_037">Persiapan kulit/mandi dengan antiseptik (bila diperlukan)</label>
+                                    <input class="form-check-input" type="checkbox" name="t_016" id="t_016_persiapan">
+                                    <label class="form-check-label" for="t_016_persiapan">Persiapan kulit/mandi dengan antiseptik (bila diperlukan)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_038" name="t_038">
-                                    <label class="form-check-label" for="t_038">Area insisi operasi telah dilakukan pencukuran</label>
+                                    <input class="form-check-input" type="checkbox" name="t_016" id="t_016_area">
+                                    <label class="form-check-label" for="t_016_area">Area insisi operasi telah dilakukan pencukuran</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_039" name="t_039">
-                                    <label class="form-check-label" for="t_039">Gula darah pasien terkendali</label>
+                                    <input class="form-check-input" type="checkbox" name="t_016" id="t_016_gula">
+                                    <label class="form-check-label" for="t_016_gula">Gula darah pasien terkendali</label>
                                 </div>
                             </div>
                         </div>
@@ -448,12 +456,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_040" name="t_040">
-                                    <label class="form-check-label" for="t_040">Tidak</label>
+                                    <input class="form-check-input" type="checkbox" name="t_017" id="t_017_tidak">
+                                    <label class="form-check-label" for="t_017_tidak">Tidak</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_041" name="t_041">
-                                    <label class="form-check-label" for="t_041">Ya (konfirmasi nama obat, dosis dan jam pemberian)</label>
+                                    <input class="form-check-input" type="checkbox" name="t_017" id="t_017_ya">
+                                    <label class="form-check-label" for="t_017_ya">Ya (konfirmasi nama obat, dosis dan jam pemberian)</label>
                                 </div>
                             </div>
                         </div>
@@ -463,12 +471,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_042" name="t_042">
-                                    <label class="form-check-label" for="t_042">Ditampilkan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_018" id="t_018_ditampilkan">
+                                    <label class="form-check-label" for="t_018_ditampilkan">Ditampilkan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_043" name="t_043">
-                                    <label class="form-check-label" for="t_043">Tidak</label>
+                                    <input class="form-check-input" type="checkbox" name="t_018" id="t_018_tidak">
+                                    <label class="form-check-label" for="t_018_tidak">Tidak</label>
                                 </div>
                             </div>
                         </div>
@@ -477,9 +485,9 @@ $(function() {
                             <table style="justify-content: center; width: 100%;">
                                 <tr>
                                     <td style="text-align: center; width: 50%;">
-                                        <label for="" style="text-align: center;">Perawat Sirkuler</label>
+                                        <label for="v_15" style="text-align: center;">Perawat Sirkuler</label>
                                         <br><div id="sig2"></div>
-                                        <br>( <input type="text" id="v_015" name="v_015" style="width: 150px;"> )
+                                        <br>( <input type="text" id="v_15" name="v_15" style="width: 150px;"> )
                                     </td>
                                 </tr>
                             </table>
@@ -496,16 +504,16 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_044" name="t_044">
-                                    <label class="form-check-label" for="t_044">Instrument</label>
+                                    <input class="form-check-input" type="checkbox" name="t_019" id="t_019_instrument">
+                                    <label class="form-check-label" for="t_019_instrument">Instrument</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_045" name="t_045">
-                                    <label class="form-check-label" for="t_045">Kassa</label>
+                                    <input class="form-check-input" type="checkbox" name="t_019" id="t_019_kassa">
+                                    <label class="form-check-label" for="t_019_kassa">Kassa</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_046" name="t_046">
-                                    <label class="form-check-label" for="t_046">Pisau dan jarum</label>
+                                    <input class="form-check-input" type="checkbox" name="t_019" id="t_019_pisau">
+                                    <label class="form-check-label" for="t_019_pisau">Pisau dan jarum</label>
                                 </div>
                             </div>
                         </div>
@@ -515,20 +523,20 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_047" name="t_047">
-                                    <label class="form-check-label" for="t_047">Preparat / specimen jaringan tubuh</label>
+                                    <input class="form-check-input" type="checkbox" name="t_020" id="t_020_preparat">
+                                    <label class="form-check-label" for="t_020_preparat">Preparat / specimen jaringan tubuh</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_048" name="t_048">
-                                    <label class="form-check-label" for="t_048">Formulir permintaan pemeriksaan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_020" id="t_020_formulir">
+                                    <label class="form-check-label" for="t_020_formulir">Formulir permintaan pemeriksaan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_049" name="t_049">
-                                    <label class="form-check-label" for="t_049">Telah dilengkapi identitas pasien</label>
+                                    <input class="form-check-input" type="checkbox" name="t_020" id="t_020_telahdilengkapi">
+                                    <label class="form-check-label" for="t_020_telahdilengkapi">Telah dilengkapi identitas pasien</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_050" name="t_050">
-                                    <label class="form-check-label" for="t_050">Penjelasan oleh operator kepada keluarga pasien</label>
+                                    <input class="form-check-input" type="checkbox" name="t_020" id="t_020_penjelasan">
+                                    <label class="form-check-label" for="t_020_penjelasan">Penjelasan oleh operator kepada keluarga pasien</label>
                                 </div>
                             </div>
                         </div>
@@ -538,12 +546,12 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_051" name="t_051">
-                                    <label class="form-check-label" for="t_051">Ada rembesan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_021" id="t_021_ada">
+                                    <label class="form-check-label" for="t_021_ada">Ada rembesan</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_052" name="t_052">
-                                    <label class="form-check-label" for="t_052">Tidak ada rembesan</label>
+                                    <input class="form-check-input" type="checkbox" name="t_021" id="t_021_tidak">
+                                    <label class="form-check-label" for="t_021_tidak">Tidak ada rembesan</label>
                                 </div>
                             </div>
                         </div>
@@ -553,28 +561,28 @@ $(function() {
                         <div class="row">
                             &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_053" name="t_053">
-                                    <label class="form-check-label" for="t_053">Kesadaran</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_kesadaran">
+                                    <label class="form-check-label" for="t_022_kesadaran">Kesadaran</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_054" name="t_054">
-                                    <label class="form-check-label" for="t_054">Tekanan darah</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_tekanandarah">
+                                    <label class="form-check-label" for="t_022_tekanandarah">Tekanan darah</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_055" name="t_055">
-                                    <label class="form-check-label" for="t_055">Nadi</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_nadi">
+                                    <label class="form-check-label" for="t_022_nadi">Nadi</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_056" name="t_056">
-                                    <label class="form-check-label" for="t_056">Saturasi oksigen (%)</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_saturasi">
+                                    <label class="form-check-label" for="t_022_saturasi">Saturasi oksigen (%)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_057" name="t_057">
-                                    <label class="form-check-label" for="t_057">Suhu</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_suhu">
+                                    <label class="form-check-label" for="t_022_suhu">Suhu</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="t_058" name="t_058">
-                                    <label class="form-check-label" for="t_058">Skala nyeri</label>
+                                    <input class="form-check-input" type="checkbox" name="t_022" id="t_022_skala">
+                                    <label class="form-check-label" for="t_022_skala">Skala nyeri</label>
                                 </div>
                             </div>
                         </div>
@@ -586,42 +594,42 @@ $(function() {
                                 <div class="form-check">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="t_059" name="t_059">
-                                            <label class="form-check-label" for="t_059" style="vertical-align: top;">Ahli bedah</label>
+                                            <input class="form-check-input" type="checkbox" name="t_023" id="t_023_ahlibedah" onclick="fungsi7()">
+                                            <label class="form-check-label" for="t_023_ahlibedah" style="vertical-align: top;">Ahli bedah</label>
                                         </div>
                                         <div class="col-md-1">
                                             <label for="" style="vertical-align: top;">: </label>
                                         </div>
                                         <div class="col-md-8" style="text-align: start;">
-                                            <input type="text" id="v_016" name="v_016" style="width: 200px; height: 70px;">
+                                            <textarea name="v_16" id="v_16" style="width: 200px; height: 70px;" disabled></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-check">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="t_060" name="t_060">
-                                            <label class="form-check-label" for="t_060" style="vertical-align: top;">Ahli anastesi</label>
+                                            <input class="form-check-input" type="checkbox" name="t_023" id="t_023_ahlianastesi" onclick="fungsi8()">
+                                            <label class="form-check-label" for="t_023_ahlianastesi" style="vertical-align: top;">Ahli anastesi</label>
                                         </div>
                                         <div class="col-md-1">
                                             <label for="" style="vertical-align: top;">: </label>
                                         </div>
                                         <div class="col-md-8">
-                                            <input type="text" id="v_017" name="v_017" style="width: 200px; height: 70px;">
+                                            <textarea name="v_17" id="v_17" style="width: 200px; height: 70px;" disabled></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-check">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="t_061" name="t_061">
-                                            <label class="form-check-label" for="t_061" style="vertical-align: top;">Perawat</label>
+                                            <input class="form-check-input" type="checkbox" name="t_023" id="t_023_perawat" onclick="fungsi9()">
+                                            <label class="form-check-label" for="t_023_perawat" style="vertical-align: top;">Perawat</label>
                                         </div>
                                         <div class="col-md-1">
                                             <label for="" style="vertical-align: top;">: </label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="v_018" name="v_018" style="width: 200px; height: 70px;">
+                                            <textarea name="v_18" id="v_18" style="width: 200px; height: 70px;" disabled></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -634,7 +642,7 @@ $(function() {
                                     <td style="text-align: center; width: 50%;">
                                         <label for="" style="text-align: center;">Dokter Operator</label>
                                         <br><div id="sig3"></div>
-                                        <br>( <input type="text" id="v_019" name="v_019" style="width: 150px;"> )
+                                        <br>( <input type="text" id="v_19" name="v_19" style="width: 150px;"> )
                                     </td>
                                 </tr>
                             </table>
@@ -646,7 +654,105 @@ $(function() {
         
     </div>
 
-
+    <script type="text/javascript">
+        function fungsi1 () {
+            if ($("#t_02_dokterbedah").is(":checked")) {
+                $("#v_05").removeAttr("disabled");
+                $("#v_05").focus();
+            } else {
+                $("#v_05").attr("disabled", true);
+                $("#v_05").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi2 () {
+            if ($("#t_02_dokteranastesi").is(":checked")) {
+                $("#v_06").removeAttr("disabled");
+                $("#v_06").focus();
+            } else {
+                $("#v_06").attr("disabled", true);
+                $("#v_06").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi3 () {
+            if ($("#t_02_namatindakan").is(":checked")) {
+                $("#v_07").removeAttr("disabled");
+                $("#v_07").focus();
+            } else {
+                $("#v_07").attr("disabled", true);
+                $("#v_07").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi4 () {
+            if ($("#t_06_ada").is(":checked")) {
+                $("#v_08").removeAttr("disabled");
+                $("#v_08").focus();
+            } else {
+                $("#v_08").attr("disabled", true);
+                $("#v_08").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi5 () {
+            if ($("#t_010_ya").is(":checked")) {
+                $("#v_09").removeAttr("disabled");
+                $("#v_09").focus();
+            } else {
+                $("#v_09").attr("disabled", true);
+                $("#v_09").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi6 () {
+            if ($("#t_011_tidaklengkap").is(":checked")) {
+                $("#v_14").removeAttr("disabled");
+                $("#v_14").focus();
+            } else {
+                $("#v_14").attr("disabled", true);
+                $("#v_14").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi7 () {
+            if ($("#t_023_ahlibedah").is(":checked")) {
+                $("#v_16").removeAttr("disabled");
+                $("#v_16").focus();
+            } else {
+                $("#v_16").attr("disabled", true);
+                $("#v_16").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi8 () {
+            if ($("#t_023_ahlianastesi").is(":checked")) {
+                $("#v_17").removeAttr("disabled");
+                $("#v_17").focus();
+            } else {
+                $("#v_17").attr("disabled", true);
+                $("#v_17").val("");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function fungsi9 () {
+            if ($("#t_023_perawat").is(":checked")) {
+                $("#v_18").removeAttr("disabled");
+                $("#v_18").focus();
+            } else {
+                $("#v_18").attr("disabled", true);
+                $("#v_18").val("");
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
