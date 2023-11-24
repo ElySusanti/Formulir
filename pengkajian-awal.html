@@ -41,18 +41,18 @@
                                 <td>
                                     <div class="row mb-1">
                                         <div class="col-md-4">
-                                            <label for="v_01">No. MR</label>
+                                            <label for="no_Registration">No. MR</label>
                                         </div>
                                         <div class="col-md-6">
-                                            : <input type="text" id="v_01" name="v_01" style="width: 150px;" required autofocus>
+                                            : <input type="text" id="no_Registration" name="no_Registration" style="width: 150px;" readonly>
                                         </div>
                                     </div>
                                     <div class="row mb-1">
                                         <div class="col-md-4">
-                                            <label for="v_02">Nama Lengkap</label>
+                                            <label for="thename">Nama Lengkap</label>
                                         </div>
                                         <div class="col-md-6">
-                                            : <input type="text" id="v_02" name="v_02" style="width: 150px;" required>
+                                            : <input type="text" id="thename" name="thename" style="width: 150px;" readonly>
                                         </div>
                                     </div>
                                     <div class="row mb-1">
@@ -60,7 +60,7 @@
                                             <label for="v_03">Tanggal Lahir</label>
                                         </div>
                                         <div class="col-md-6">
-                                            : <input type="date" id="v_03" name="v_03" style="width: 150px;" required>
+                                            : <input type="date" id="v_03" name="v_03" style="width: 150px;" readonly>
                                         </div>
                                     </div>
                                 </td>
@@ -199,35 +199,43 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="t_07" id="t_07_ada" value="1" onclick="fungsi3_enable">
                                     <label class="form-check-label" for="t_07_ada"> Ada</label>
-                                    <input type="text" id="v_11" name="v_11" style="width: 100px;" disabled>
+                                    <input type="text" id="Riwayat_alergi" name="Riwayat_alergi" style="width: 100px;" disabled>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="v_12">Riwayat Kesehatan</label></td>
+                            <td><label for="diagnosa_history">Riwayat Kesehatan</label></td>
                             <td colspan="3">
-                                <input type="text" id="v_12" name="v_12" style="width: 300px;">
+                                <input type="text" id="diagnosa_history" name="diagnosa_history" style="width: 300px;">
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="v_13">Pengobatan</label></td>
+                            <td><label for="riwayat_obat">Pengobatan</label></td>
                             <td colspan="3">
-                                <input type="text" id="v_13" name="v_13" style="width: 300px;">
+                                <input type="text" id="riwayat_obat" name="riwayat_obat" style="width: 300px;">
                             </td>
                         </tr>
                         <tr style="vertical-align: middle;">
                             <td rowspan="2">Tanda-tanda Vital</td>
                             <td colspan="3" style="height: 60px;">
-                                <label for="v_14">TD: </label><input type="number" id="v_14" name="v_14" style="width: 100px;"> mmHg &nbsp;
-                                <label for="v_15">HR: </label><input type="number" id="v_15" name="v_15" style="width: 50px;"> x/Mnt &nbsp;
-                                <label for="v_16">RR: </label><input type="number" id="v_16" name="v_16" style="width: 50px;"> x/mnt
+                                <label for="tension_upper">TD: </label>
+                                <input type="number" id="tension_upper" name="tension_upper" style="width: 50px;"> / <input type="number" id="tension_bellow" name="tension_upper" style="width: 50px;"> mmHg &nbsp;
+                                <label for="nadi">HR: </label>
+                                <input type="number" id="nadi" name="nadi" style="width: 50px;"> x/Mnt &nbsp;
+                                <label for="nafas">RR: </label>
+                                <input type="number" id="nafas" name="nafas" style="width: 50px;"> x/mnt
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3"  style="vertical-align: middle;">
-                                <label for="v_17">SPO2: </label><input type="number" id="v_17" name="v_17" style="width: 50px;"> % &nbsp;
-                                <label for="v_18">Suhu: </label><input type="number" id="v_18" name="v_18" style="width: 50px;"> &nbsp;
-                                <label for="v_19">BB/TB/PB: </label><input type="number" id="v_19" name="v_19" style="width: 100px;">
+                                <label for="saturasi">SPO2: </label>
+                                <input type="number" id="saturasi" name="saturasi" style="width: 50px;"> % &nbsp;
+                                <label for="temperature">Suhu: </label>
+                                <input type="number" id="temperature" name="temperature" style="width: 50px;"> &nbsp;
+                                <label for="weight">BB/TB/PB: </label>
+                                <input type="number" id="weight" name="weight" style="width: 50px;">
+                                <input type="number" id="height" name="height" style="width: 50px;">
+                                <input type="number" id="height" name="height" style="width: 50px;">
                             </td>
                             <td colspan="4" rowspan="7" style="text-align: center;">
                                 <b>Skala Nyeri Untuk Anak (Skala Flacc):</b><br>
