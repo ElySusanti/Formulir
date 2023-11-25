@@ -9,6 +9,34 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        .kbw-signature { width: 150px; height: 90px; }
+    </style>
+    <!--[if IE]>
+    <script src="excanvas.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery.signature.js"></script>
+    <script>
+        $(function() {
+            var sig = $('#sig').signature();
+            $('#disable').click(function() {
+                var disable = $(this).text() === 'Disable';
+                $(this).text(disable ? 'Enable' : 'Disable');
+                sig.signature(disable ? 'disable' : 'enable');
+            });
+            $('#clear').click(function() {
+                sig.signature('clear');
+            });
+            $('#json').click(function() {
+                alert(sig.signature('toJSON'));
+            });
+            $('#svg').click(function() {
+                alert(sig.signature('toSVG'));
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container" style="font-family: Verdana;">
@@ -25,40 +53,40 @@
             </table>
             <div class="row mt-3 mb-1">
                 <div class="col-md-2" style="text-align: right;">
-                    <label for="">No CM/MR : </label>
+                    <label for="no_registration">No CM/MR : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="" id="" style="width: 200px;" readonly>
+                    <input type="text" name="no_registration" id="no_registration" style="width: 200px;" readonly>
                 </div>
                 <div class="col-md-2" style="text-align: right;">
-                    <label for="">Nama : </label>
+                    <label for="thename">Nama : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="" id="" style="width: 300px;" readonly>
+                    <input type="text" name="thename" id="thename" style="width: 300px;" readonly>
                 </div>
             </div>
             <div class="row mb-1">
                 <div class="col-md-2" style="text-align: right;">
-                    <label for="">Alamat : </label>
+                    <label for="theaddress">Alamat : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="" id="" style="width: 300px;" readonly>
+                    <input type="text" name="theaddress" id="theaddress" style="width: 300px;" readonly>
                 </div>
                 <div class="col-md-2" style="text-align: right;">
                     <label for="">Umur : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="number" name="" id="" style="width: 50px;" min="0" readonly> Th &nbsp;
-                    <input type="number" name="" id="" style="width: 50px;" min="0" readonly> Bln &nbsp;
-                    <input type="number" name="" id="" style="width: 50px;" min="0" readonly> Hr &nbsp;
+                    <input type="number" name="ageyear" id="ageyear" style="width: 50px;" min="0" readonly> Th &nbsp;
+                    <input type="number" name="agemonth" id="agemonth" style="width: 50px;" min="0" readonly> Bln &nbsp;
+                    <input type="number" name="ageday" id="ageday" style="width: 50px;" min="0" readonly> Hr &nbsp;
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-2" style="text-align: right;">
-                    <label for="">Cara bayar : </label>
+                    <label for="cara_bayar">Cara bayar : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="" id="" style="width: 200px;" readonly>
+                    <input type="text" name="cara_bayar" id="cara_bayar" style="width: 200px;" readonly>
                 </div>
             </div>
             <hr style="border: 2px solid black;">
@@ -68,7 +96,7 @@
                     <label><i>Kode Lembar Permintaan : 20231124142140001710A / No. ID Kunjungan : 2023083119</i></label>
                 </div>
                 <div class="col-md-3">
-                    <div class="box" style="background-color: red; text-align: center; width: 150px; height: 50px;">Sudah ditransaksikan</div>
+                    <div class="box" style="background-color: red; text-align: center; width: 150px; height: 50px;" hidden>Sudah ditransaksikan</div>
                 </div>
             </div>
             <div class="row mb-1">
@@ -76,7 +104,7 @@
                     <b>Dokter Pengirim :</b>
                 </div>
                 <div class="col">
-                    <input type="text" name="" id="" style="width: 300px;" readonly>
+                    <input type="text" name="employee_id" id="employee_id" style="width: 300px;" readonly>
                 </div>
             </div>
             <div class="row">
@@ -84,11 +112,11 @@
                     <b>Diagnosis Klinis :</b>
                 </div>
                 <div class="col">
-                    <input type="text" name="" id="" style="width: 300px;">
+                    <input type="text" name="description" id="description" style="width: 300px;">
                 </div>
                 <div class="col-md-3">
-                    <input class="form-check-input" type="checkbox" name="" id="">
-                    <label class="form-check-label" for=""><b>&nbsp;C &nbsp; Y &nbsp; T &nbsp; O</b></label>
+                    <input class="form-check-input" type="checkbox" name="patient_category_id" id="patient_category_id">
+                    <label class="form-check-label" for="patient_category_id"><b>&nbsp;C &nbsp; Y &nbsp; T &nbsp; O</b></label>
                 </div>
             </div>
             <div class="row mt-5">
@@ -97,40 +125,40 @@
                         <div class="col">
                             <b>Ekstremilitas Bawah :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Fremur AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_001" id="pr_001">
+                                <label class="form-check-label" for="pr_001">Fermur AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Ankle Joint</label>
+                                <input class="form-check-input" type="checkbox" name="pr_002" id="pr_002">
+                                <label class="form-check-label" for="pr_002">Ankle Joint</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Genu AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_003" id="pr_003">
+                                <label class="form-check-label" for="pr_003">Genu AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cruris AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_004" id="pr_004">
+                                <label class="form-check-label" for="pr_004">Cruris AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Panggul AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_005" id="pr_005">
+                                <label class="form-check-label" for="pr_005">Panggul AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Calcaneus</label>
+                                <input class="form-check-input" type="checkbox" name="pr_006" id="pr_006">
+                                <label class="form-check-label" for="pr_006">Calcaneus</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">HIP Join</label>
+                                <input class="form-check-input" type="checkbox" name="pr_007" id="pr_007">
+                                <label class="form-check-label" for="pr_007">HIP Join</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Pedis</label>
+                                <input class="form-check-input" type="checkbox" name="pr_008" id="pr_008">
+                                <label class="form-check-label" for="pr_008">Pedis</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Vertebrata</label>
+                                <input class="form-check-input" type="checkbox" name="pr_009" id="pr_009">
+                                <label class="form-check-label" for="pr_009">Vertebra</label>
                             </div>
                         </div>
                     </div>
@@ -138,18 +166,20 @@
                         <div class="col">
                             <b >Thorax :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Thoraks satu posisi
+                                <input class="form-check-input" type="checkbox" name="pr_035" id="pr_035
+                                ">
+                                <label class="form-check-label" for="pr_035
+                                ">Thoraks satu posisi
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Thoraks 2 posisi
+                                <input class="form-check-input" type="checkbox" name="pr_037" id="pr_037">
+                                <label class="form-check-label" for="pr_037">Thoraks 2 posisi
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Top Lordotik</label>
+                                <input class="form-check-input" type="checkbox" name="pr_038" id="pr_038">
+                                <label class="form-check-label" for="pr_038">Top Lordotik</label>
                             </div>
                         </div>
                     </div>
@@ -157,22 +187,22 @@
                         <div class="col">
                             <b>Tulang Belakang :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cervical 2 posisi
+                                <input class="form-check-input" type="checkbox" name="pr_042" id="pr_042">
+                                <label class="form-check-label" for="pr_042">Cervical 2 posisi
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cervical 3 posisi
+                                <input class="form-check-input" type="checkbox" name="pr_043" id="pr_043">
+                                <label class="form-check-label" for="pr_043">Cervical 3 posisi
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Vertebra</label>
+                                <input class="form-check-input" type="checkbox" name="pr_044" id="pr_044">
+                                <label class="form-check-label" for="pr_044">Vertebra</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Lumbo Sacral</label>
+                                <input class="form-check-input" type="checkbox" name="pr_045" id="pr_045">
+                                <label class="form-check-label" for="pr_045">Lumbo Sacral</label>
                             </div>
                         </div>
                     </div>
@@ -180,14 +210,12 @@
                         <div class="col">
                             <b>Gigi :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Foto gigi
-                                </label>
+                                <input class="form-check-input" type="checkbox" name="pr_053" id="pr_053">
+                                <label class="form-check-label" for="pr_053">Foto gigi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Panoramic
-                                </label>
+                                <input class="form-check-input" type="checkbox" name="pr_046" id="pr_046">
+                                <label class="form-check-label" for="pr_046">Panoramic</label>
                             </div>
                         </div>
                     </div>
@@ -197,40 +225,40 @@
                         <div class="col">
                             <b>Ekstremilitas Atas :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Manus</label>
+                                <input class="form-check-input" type="checkbox" name="pr_012" id="pr_012">
+                                <label class="form-check-label" for="pr_012">Manus</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Scapula / Clavicula</label>
+                                <input class="form-check-input" type="checkbox" name="pr_013" id="pr_013">
+                                <label class="form-check-label" for="pr_013">Scapula / Clavicula</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Antebrachi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_014" id="pr_014">
+                                <label class="form-check-label" for="pr_014">Antebrachi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Brachi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_015" id="pr_015">
+                                <label class="form-check-label" for="pr_015">Brachi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Clavicula</label>
+                                <input class="form-check-input" type="checkbox" name="pr_016" id="pr_016">
+                                <label class="form-check-label" for="pr_016">Clavicula</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Wrist Join</label>
+                                <input class="form-check-input" type="checkbox" name="pr_017" id="pr_017">
+                                <label class="form-check-label" for="pr_017">Wrist Join</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Bahu AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_018" id="pr_018">
+                                <label class="form-check-label" for="pr_018">Bahu AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Bone Survey</label>
+                                <input class="form-check-input" type="checkbox" name="pr_019" id="pr_019">
+                                <label class="form-check-label" for="pr_019">Bone Survey</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Vertebrata</label>
+                                <input class="form-check-input" type="checkbox" name="pr_020" id="pr_020">
+                                <label class="form-check-label" for="pr_020">Vertebra</label>
                             </div>
                         </div>
                     </div>
@@ -238,28 +266,28 @@
                         <div class="col">
                             <b >Abdomen :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">BNO Bayi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_055" id="pr_055">
+                                <label class="form-check-label" for="pr_055">BNO Bayi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">BNO AP</label>
+                                <input class="form-check-input" type="checkbox" name="pr_056" id="pr_056">
+                                <label class="form-check-label" for="pr_056">BNO AP</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">BNO AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_057" id="pr_057">
+                                <label class="form-check-label" for="pr_057">BNO AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Costae</label>
+                                <input class="form-check-input" type="checkbox" name="pr_058" id="pr_058">
+                                <label class="form-check-label" for="pr_058">Costae</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Abdomen</label>
+                                <input class="form-check-input" type="checkbox" name="pr_074" id="pr_074">
+                                <label class="form-check-label" for="pr_074">Abdomen</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Abdomen 3 posisi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_036" id="pr_036">
+                                <label class="form-check-label" for="pr_036">Abdomen 3 posisi</label>
                             </div>
                         </div>
                     </div>
@@ -267,16 +295,16 @@
                         <div class="col">
                             <b>Lain -lain :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Mammografi </label>
+                                <input class="form-check-input" type="checkbox" name="pr_032" id="pr_032">
+                                <label class="form-check-label" for="pr_032">Mammografi </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Expertise Foto</label>
+                                <input class="form-check-input" type="checkbox" name="pr_033" id="pr_033">
+                                <label class="form-check-label" for="pr_033">Expertise Foto</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Chepalometri</label>
+                                <input class="form-check-input" type="checkbox" name="pr_034" id="pr_034">
+                                <label class="form-check-label" for="pr_034">Chepalometri</label>
                             </div>
                         </div>
                     </div>
@@ -286,116 +314,133 @@
                         <div class="col">
                             <b>Kepala :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Mandibula</label>
+                                <input class="form-check-input" type="checkbox" name="pr_021" id="pr_021">
+                                <label class="form-check-label" for="pr_021">Mandibula</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Os Nasal
+                                <input class="form-check-input" type="checkbox" name="pr_022" id="pr_022">
+                                <label class="form-check-label" for="pr_022">Os Nasal
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Orbita</label>
+                                <input class="form-check-input" type="checkbox" name="pr_023" id="pr_023">
+                                <label class="form-check-label" for="pr_023">Orbita</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">SPN (Sinus Pranasalis)
+                                <input class="form-check-input" type="checkbox" name="pr_028" id="pr_028">
+                                <label class="form-check-label" for="pr_028">SPN (Sinus Pranasalis)
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Kepala AP / Lat</label>
+                                <input class="form-check-input" type="checkbox" name="pr_040" id="pr_040">
+                                <label class="form-check-label" for="pr_040">Kepala AP / Lat</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Mastoid</label>
+                                <input class="form-check-input" type="checkbox" name="pr_010" id="pr_010">
+                                <label class="form-check-label" for="pr_010">Mastoid</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">TMJ (Temporo Mandibular Join)</label>
+                                <input class="form-check-input" type="checkbox" name="pr_011" id="pr_011">
+                                <label class="form-check-label" for="pr_011">TMJ (Temporo Mandibular Join)</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Basis Cranii</label>
+                                <input class="form-check-input" type="checkbox" name="pr_066" id="pr_066">
+                                <label class="form-check-label" for="pr_066">Basis Cranii</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Sella Tursika</label>
+                                <input class="form-check-input" type="checkbox" name="pr_067" id="pr_067">
+                                <label class="form-check-label" for="pr_067">Sella Tursika</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Foramen Opticum</label>
+                                <input class="form-check-input" type="checkbox" name="pr_068" id="pr_068">
+                                <label class="form-check-label" for="pr_068">Foramen Opticum</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Maxilla</label>
+                                <input class="form-check-input" type="checkbox" name="pr_072" id="pr_072">
+                                <label class="form-check-label" for="pr_072">Maxilla</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Mandibulla</label>
+                                <input class="form-check-input" type="checkbox" name="pr_073" id="pr_073">
+                                <label class="form-check-label" for="pr_073">Mandibulla</label>
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-2">
+                    <div class="row mb-5">
                         <div class="col">
                             <b>Pemeriksaan dengan Kontras :</b><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Appendicografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_062" id="pr_062">
+                                <label class="form-check-label" for="pr_062">Appendicografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Oesophagografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_063" id="pr_063">
+                                <label class="form-check-label" for="pr_063">Oesophagografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cor Analisa</label>
+                                <input class="form-check-input" type="checkbox" name="pr_064" id="pr_064">
+                                <label class="form-check-label" for="pr_064">Cor Analisa</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cystografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_065" id="pr_065">
+                                <label class="form-check-label" for="pr_065">Cystografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Fistulografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_070" id="pr_070">
+                                <label class="form-check-label" for="pr_070">Fistulografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Cholecystografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_071" id="pr_071">
+                                <label class="form-check-label" for="pr_071">Cholecystografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Uretrocystografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_076" id="pr_076">
+                                <label class="form-check-label" for="pr_076">Uretrocystografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Arthrografi</label>
+                                <input class="form-check-input" type="checkbox" name="pr_075" id="pr_075">
+                                <label class="form-check-label" for="pr_075">Arthrografi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Myelografi thoracal / cervical</label>
+                                <input class="form-check-input" type="checkbox" name="pr_041" id="pr_041">
+                                <label class="form-check-label" for="pr_041">Myelografi thoracal / cervical</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Myelografi Lumbal</label>
+                                <input class="form-check-input" type="checkbox" name="pr_031" id="pr_031">
+                                <label class="form-check-label" for="pr_031">Myelografi Lumbal</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">HSG</label>
+                                <input class="form-check-input" type="checkbox" name="pr_024" id="pr_024">
+                                <label class="form-check-label" for="pr_024">HSG</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">Colon Inloop</label>
+                                <input class="form-check-input" type="checkbox" name="pr_059" id="pr_059">
+                                <label class="form-check-label" for="pr_059">Colon Inloop</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">OMD</label>
+                                <input class="form-check-input" type="checkbox" name="pr_060" id="pr_060">
+                                <label class="form-check-label" for="pr_060">OMD</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="" id="">
-                                <label class="form-check-label" for="">BNO IVP</label>
+                                <input class="form-check-input" type="checkbox" name="pr_052" id="pr_052">
+                                <label class="form-check-label" for="pr_052">BNO IVP</label>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="tanggal_permintaan">Bengkulu, </label>
+                            <input type="date" name="tanggal_permintaan" id="tanggal_permintaan" style="width: 150px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Dokter yang meminta</label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div id="sig"></div><br>
+                            ( <input type="text" name="employee_id_1" id="employee_id_1" style="width: 150px;"> )
                         </div>
                     </div>
                 </div>
