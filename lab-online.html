@@ -84,10 +84,10 @@
                     <input type="text" name="thename" id="thename" style="width: 300px;" readonly>
                 </div>
                 <div class="col-md-2" style="text-align: right;">
-                    <label for="">Tanggal Lahir : </label>
+                    <label for="date_of_birth">Tanggal Lahir : </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="date" name="ageyear" id="ageyear" style="width: 200px;" min="0" readonly>
+                    <input type="date" name="date_of_birth" id="date_of_birth" style="width: 200px;" min="0" readonly>
                 </div>
             </div>
             <div class="row mb-3">
@@ -116,17 +116,17 @@
                 </div>
                 <div class="col">
                     <input type="text" name="employee_id" id="employee_id" style="width: 300px;" readonly>&nbsp;
-                    <input type="text" name="" id="" style="width: 200px;" readonly>
+                    <input type="text" name="clinic_id" id="clinic_id" style="width: 200px;" readonly>
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col-md-2" style="text-align: right;">
-                    <label for="">Tanggal Periksa</label>
+                <div class="col-md-2">
+                    <label for="vactination_date">Tanggal Periksa</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="theaddress" id="theaddress" style="width: 200px;" readonly>
+                    <input type="text" name="vactination_date" id="vactination_date" style="width: 200px;" readonly>
                 </div>
-                <div class="col-md-3" style="color: red;">
+                <div class="col-md-3" style="color: red; border-color: red;">
                     <input class="form-check-input" type="checkbox" name="patient_category_id" id="patient_category_id">
                     <label class="form-check-label" for="patient_category_id"><b>CITO</b></label>
                 </div>
@@ -137,10 +137,10 @@
             </div>
             <div class="row mb-5">
                 <div class="col-md-2">
-                    <b>Diagnosis Klinis</b>
+                    <label for="description"><b>Diagnosis Klinis</b></label>
                 </div>
                 <div class="col">
-                    <input type="text" name="theaddress" id="theaddress" style="width: 200px;" readonly>
+                    <input type="text" name="description" id="description" style="width: 200px;" autofocus>
                 </div>
             </div>
             <div class="row mb-2">
@@ -157,8 +157,8 @@
                                 <label class="form-check-label" for="pl_011">Laju Endap Darah</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pl_023" id="pl_023">
-                                <label class="form-check-label" for="pl_023">Hematokrit</label>
+                                <input class="form-check-input" type="checkbox" name="pl_010" id="pl_010">
+                                <label class="form-check-label" for="pl_010">Hematokrit</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="pl_024" id="pl_024">
@@ -495,8 +495,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pl_032" id="pl_032">
-                                <label class="form-check-label" for="pl_032">BTA Sputum</label>
+                                <input class="form-check-input" type="checkbox" name="pl_050" id="pl_050">
+                                <label class="form-check-label" for="pl_050">BTA Sputum</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="pl_009" id="pl_009">
@@ -548,8 +548,8 @@
                                     <label class="form-check-label" for="pl_050">BTA Sputum</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="pl_145" id="pl_145">
-                                    <label class="form-check-label" for="pl_145">Analisa Sperma</label>
+                                    <input class="form-check-input" type="checkbox" name="pl_040" id="pl_040">
+                                    <label class="form-check-label" for="pl_040">Analisa Sperma</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="pl_068" id="pl_068">
@@ -599,13 +599,13 @@
             </div>
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <b><i>Pemeriksaan Lain</i></b><br>
-                    <textarea name="" id="" style="width: 500px; height: 100px;"></textarea>
+                    <label for="pemeriksaan_lain"><b><i>Pemeriksaan Lain</i></b></label><br>
+                    <textarea name="pemeriksaan_lain" id="pemeriksaan_lain" style="width: 500px; height: 100px;"></textarea>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <label for="">Tanda Tangan Dokter</label>
+                            <label for="doctor">Tanda Tangan Dokter</label>
                         </div>
                     </div>
                     <div class="row mb-1">
@@ -615,7 +615,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            ( <input type="text" name="employee_id_1" id="employee_id_1" style="width: 150px;"> )
+                            ( <input type="text" name="doctor" id="doctor" style="width: 150px;"> )
                         </div>
                     </div>
                 </div>
