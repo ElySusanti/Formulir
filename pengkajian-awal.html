@@ -659,26 +659,26 @@
                             <td colspan="3" rowspan="2">
                                 <div class="row">
                                     <div class="col">
-                                        Hubungan dengan anggota keluarga: 
+                                        Hubungan dengan anggota keluarga:
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_024" id="t_024_baik" value="0">
-                                            <label class="form-check-label" for="t_024_baik"> Baik</label>&nbsp;
+                                            <input class="form-check-input" type="radio" name="t_025" id="t_025_baik" value="0">
+                                            <label class="form-check-label" for="t_025_baik"> Baik</label>&nbsp;
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_024" id="t_024_tidak" value="1">
-                                            <label class="form-check-label" for="t_024_tidak"> Tidak</label>
+                                            <input class="form-check-input" type="radio" name="t_025" id="t_025_tidak" value="1">
+                                            <label class="form-check-label" for="t_025_tidak"> Tidak</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        Tempat tinggal: 
+                                        Tempat tinggal:
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_025" id="t_025_rumahsendiri" value="0" onclick="fungsi6_disabled()">
-                                            <label class="form-check-label" for="t_025_rumahsendiri"> Rumah sendiri</label>&nbsp;
+                                            <input class="form-check-input" type="radio" name="t_026" id="t_026_rumahsendiri" value="0" onclick="fungsi6_disabled()">
+                                            <label class="form-check-label" for="t_026_rumahsendiri"> Rumah sendiri</label>&nbsp;
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_025" id="t_025_input" value="1" onclick="fungsi6_enable()">
+                                            <input class="form-check-input" type="radio" name="t_026" id="t_026_input" value="1" onclick="fungsi6_enable()">
                                             <input type="text" id="v_27" name="v_27" style="width: 150px;" disabled>
                                         </div>
                                     </div>
@@ -688,42 +688,66 @@
                             <td style="text-align: center;"><b>Hasil</b></td>
                         </tr>
                         <tr>
-                            <td colspan="3">Apakah terdapat penyakit resiko malnutrisi seperti</td>
-                            <td style="text-align: center;">
-                                <input class="form-check-input" type="radio" name="t_026" id="t_026_ya" value="0">
-                                <label class="form-check-label" for="t_026_ya"> Ya</label>
+                            <td rowspan="2" colspan="3">
+                                <div class="row">
+                                    <div class="col">Apakah terdapat penyakit resiko malnutrisi seperti</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">(DM, CKD, Troid, Kanker, dll)</div>
+                                </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" style="vertical-align: middle;">Ekonomi</td>
-                            <td colspan="3" rowspan="2">
-                                <div class="row mb-1">
+                            <td rowspan="2" style="text-align: center;">
+                                <div class="row">
                                     <div class="col">
-                                        <label for="v_28">Pekerjaan: </label>
-                                        <input type="text" id="v_28" name="v_28" style="width: 100px;">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <label for="">Hambatan ekonomi: </label>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_027" id="t_027_tidak" value="0" onclick="fungsi7_disabled()">
-                                            <label class="form-check-label" for="t_027_tidak"> Tidak </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_027" id="t_027_ya" value="1" onclick="fungsi7_enable()">
-                                            <label class="form-check-label" for="t_027_ya"> Ya </label>
-                                        </div>
+                                        <input class="form-check-input" type="radio" name="t_027" id="t_027_ya" value="0">
+                                        <label class="form-check-label" for="t_027_ya"> Ya</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" id="v_29" name="v_29" style="width: 100%;" disabled>
+                                        <input class="form-check-input" type="radio" name="t_027" id="t_027_tidak" value="1">
+                                        <label class="form-check-label" for="t_027_tidak"> Tidak</label>
                                     </div>
                                 </div>
                             </td>
-                            <td colspan="3">(DM, CKD, Troid, Kanker, dll)</td>
-                            <td style="text-align: center;">
-                                <input class="form-check-input" type="radio" name="t_026" id="t_026_tidak" value="1">
-                                <label class="form-check-label" for="t_026_tidak"> Tidak</label>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="vertical-align: middle;">Ekonomi</td>
+                            <td colspan="3" rowspan="2" style="vertical-align: middle;">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="v_28">Pekerjaan: </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="text" id="v_28" name="v_28" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="">Hambatan ekonomi: </label>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="t_028" id="t_028_tidak" value="0" onclick="fungsi7_disabled()">
+                                                    <label class="form-check-label" for="t_028_tidak"> Tidak </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="t_028" id="t_028_ya" value="1" onclick="fungsi7_enable()">
+                                                    <label class="form-check-label" for="t_028_ya"> Ya </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="text" id="v_29" name="v_29" style="width: 100%;" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -731,18 +755,18 @@
                             <td style="text-align: center;"><b>Hasil</b></td>
                         </tr>
                         <tr style="vertical-align: middle;">
-                            <td rowspan="2">Spiritual</td>
-                            <td colspan="3" rowspan="2">
+                            <td>Spiritual</td>
+                            <td colspan="3">
                                 <div class="row mb-1">
                                     <div class="col">
                                         <label for="">Membutuhkan konseling Spiritual/Agama:</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_028" id="t_028_tidak" value="0" onclick="fungsi8_disabled()">
-                                            <label class="form-check-label" for="t_028_tidak"> Tidak </label>
+                                            <input class="form-check-input" type="radio" name="t_029" id="t_029_tidak" value="0" onclick="fungsi8_disabled()">
+                                            <label class="form-check-label" for="t_029_tidak"> Tidak </label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="t_028" id="t_028_ya" value="1" onclick="fungsi8_enable()">
-                                            <label class="form-check-label" for="t_028_ya"> Ya </label>
+                                            <input class="form-check-input" type="radio" name="t_029" id="t_029_ya" value="1" onclick="fungsi8_enable()">
+                                            <label class="form-check-label" for="t_029_ya"> Ya </label>
                                         </div>
                                     </div>
                                 </div>
@@ -752,17 +776,27 @@
                                     </div>
                                 </div>
                             </td>
-                            <td colspan="3">Apakah terdapat penyakit resiko malnutrisi seperti</td>
-                            <td style="text-align: center;">
-                                <input class="form-check-input" type="radio" name="t_029" id="t_029_ya" value="0">
-                                <label class="form-check-label" for="t_029_ya"> Ya</label>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col">Apakah terdapat penyakit resiko malnutrisi seperti</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">(TBC, Kelainan Anatomis, dll)</div>
+                                </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">(TBC, Kelainan Anatomis, dll)</td>
                             <td style="text-align: center;">
-                                <input class="form-check-input" type="radio" name="t_029" id="t_029_tidak" value="1">
-                                <label class="form-check-label" for="t_029_tidak"> Tidak</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="t_030" id="t_030_ya" value="0">
+                                        <label class="form-check-label" for="t_030_ya"> Ya</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-check-input" type="radio" name="t_030" id="t_030_tidak" value="1">
+                                        <label class="form-check-label" for="t_030_tidak"> Tidak</label>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         <tr>
